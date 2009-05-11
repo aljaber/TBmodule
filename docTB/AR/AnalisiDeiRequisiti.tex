@@ -1,0 +1,593 @@
+\input{../TeX/base} %BASE!!!
+\usepackage{multirow}
+\begin{document}
+
+\renewcommand{\insertversion}{0.0} %INSERIRE LA VERSIONE QUI DENTRO STILE x.x.xx
+\renewcommand{\TITOLODOC}{Analisi dei Requisiti} %INSERIRE IL TITOLO DEL DOCUMENTO DA FAR COMPARIRE A PIE PAGINA
+
+\begin{titlepage}
+\begin{center}
+	\begin{Large}	\today \end{Large}
+\end{center}
+
+\vspace{20pt}
+
+\begin{center}
+	\begin{Huge}
+				\textbf{GESTIONE DELLA COMUNICAZIONE TRA CLIENTI E OPERATORI COMMERCIALI IN UN SISTEMA CRM}
+	\end{Huge}
+\end{center}			
+
+\begin{center}
+	\begin{large}
+				\textbf{Software per il Disegno Grafico\\ in Tecnologie Web}
+	\end{large}
+\end{center}			
+
+\vspace{20pt}
+
+\begin{center}
+\includegraphics[scale=0.3]{../tecnobit}
+\end{center}
+
+\vspace{140pt}
+\begin{center} %INSERIRE ALL'INTERNO IL TITOLO DOCUMENTO CHE COMPARIRA NELLA PAGINA INIZIALE				
+	\begin{Huge}
+				\textbf{\TITOLODOC}
+	\end{Huge}
+			\\
+\end{center}
+\vspace{140pt}
+\begin{center}
+Versione: \insertversion
+\end{center}
+\end{titlepage}
+
+\newpage
+
+
+\begin{center} %INSERIRE ALL'INTERNO IL TITOLO DOCUMENTO CHE COMPARIRA NELLA PAGINA INIZIALE
+	\begin{Huge}	
+				\textbf{\TITOLODOC}
+			\\
+	\end{Huge}
+\end{center}
+\parindent=18pt %settato indentazione di default 
+\section*{\LARGE Sommario:} %SEZIONE SOMMARIO
+Questo documento si prefigge di presentare lo studio effettuato da Piero Bizzotto riguardo al prodotto software relativo ai moduli da sviluppare del sistema informatico aziendale dell'azienda Tecnobit SRL.
+Tale studio \`e mirato alla comprensione dei bisogni espressi dall'azienda sopra citata e alla loro formalizzazione e classificazione in requisiti informatici. In particolare quelli funzionali individuati nel documento verranno espressi anche mediante casi d'uso, sia narrativi che grafici. 
+
+\section*{\LARGE Stato del documento:}
+	Formale Esterno
+\hangindent=0pt
+
+\section*{\LARGE Redazione:}
+	\begin{table}[!h]
+		\begin{center}
+			\begin{tabular}
+				{|c|c|}
+				\hline
+				%%%%%%%%%%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				\multicolumn{2}{|c|}{ \textbf{Redazione} } \\
+				\hline
+				\textbf{Fase} & \textbf{Redattori} \\
+				%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				\hline
+				%%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
+				\multirow{1}{*}{Pre-RR} & Bizzotto Piero\\
+										
+				\hline
+				\multirow{1}{*}{RR-RPP} & Bizzotto Piero\\
+                                        
+										%& \\
+										
+				\hline
+				\multirow{1}{*}{RPP-RQ} & Bizzotto Piero\\
+                                      
+													\hline
+				%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\end{tabular}
+			\caption{Lista Redattori} %INSERIRE DIDASCALIA - SE NECESSARIA - 
+			\label{tabredazione}
+		\end{center}
+	\end{table}	
+
+\newpage
+\section*{\LARGE Verifica:}
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}
+			{|c|c|}
+			\hline
+			%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\multicolumn{2}{|c|}{ \textbf{Verifica}} \\
+			\hline
+			\textbf{Fase} & \textbf{Verificatori} \\
+			%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\hline
+			%%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
+			\multirow{1}{*}{Pre-RR}  &  Bizzotto Piero\\
+									%&  \\
+			\hline
+			\multirow{1}{*}{RR-RPP} & Bizzotto Piero\\
+									%& \\
+									
+			\hline
+			\multirow{1}{*}{RPP-RQ} & Bizzotto Piero\\
+									%& \\
+			\hline
+			%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\end{tabular}
+		\caption{Lista Verificatori} %INSERIRE DIDASCALIA - SE NECESSARIA - 
+		\label{tabverifica}
+	\end{center}
+\end{table}
+
+%tabella approvazione
+\section*{\LARGE Approvazione:}
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}
+			{|c|c|}
+			\hline
+			%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\multicolumn{2}{|c|}{ \textbf{Approvazione} } \\
+			\hline
+			\textbf{Fase} & \textbf{Approvatori} \\
+			%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\hline
+			%%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
+			\multirow{1}{*}{Pre-RR}  &  Bizzotto Piero\\
+									%&  \\
+			\hline
+			\multirow{1}{*}{RR-RPP} & Bizzotto Pieroo\\
+									%& \\
+									
+			\hline
+			\multirow{1}{*}{RPP-RQ} & Bizzotto Piero\\
+									%& \\
+			\hline
+			%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\end{tabular}
+		\caption{Lista Approvatori} %INSERIRE DIDASCALIA - SE NECESSARIA - 
+		\label{tabapprovazione}
+	\end{center}
+\end{table}
+
+\textbf{}
+
+\section*{\LARGE Lista di Distribuzione:}
+
+	\begin{elenconumerato}{\normindent}
+		\item Piero Bizzotto
+		\item Il committente Rossi Marco in rappresentanza \\  dell'azienda proponente Tecnobit SRL
+	\end{elenconumerato}
+
+\newpage
+
+\section*{\LARGE Registro delle Modifiche:}
+
+\begin{center}
+	\begin{table}[h]
+		  \begin{tabular*}
+			{1\textwidth}%
+					 {@{\extracolsep{\fill}}|p{0.1\textwidth}|p{0.55\textwidth}|p{0.25\textwidth}|}
+		 \hline
+%%%%%%%%%%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\textbf{Versione}  & \textbf{Descrizione} & \textbf{Autore} \\
+%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				
+				\hline	
+    	 	     0.0 & 07$\slash$05$\slash$2009 Strutturazione del documento. & Bizzotto Piero \\
+
+		\hline %%FINE RIGA
+%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\end{tabular*}
+	\caption{Registro delle modifiche} %INSERIRE DIDASCALIA - SE NECESSARIA - 
+	\label{tab:modifiche}
+	\end{table}
+\end{center}
+
+\newpage
+\thispagestyle{fancy}
+\tableofcontents
+\thispagestyle{fancy}
+\newpage
+\parskip=-5pt
+
+\sezione{Introduzione}
+
+\subsezione{Scopo del documento}
+Il presente documento \`e indirizzato a fornire una descrizione in grado di identificare i moduli software da sviluppare, ed elenca pertanto i requisiti, impliciti, espliciti, funzionali e non funzionali, individuati per i prodotti di cui sopra.
+
+\subsezione{Scopo del prodotto}
+I moduli scelti sono due: la gestione delle richieste provenienti da possibili clienti futuri (informazioni, software dimostrativo) per favorire il reparto commerciale dell'azienda nei contatti con i clienti stessi, integrando tale gestione nel nuovo sistema CRM in fase di costruzione; analisi di eventuali features aggiuntive disponibili tramite il centralino VOIP attualmente in uso (Voispeed) e considerazioni su una possibile sostituzione futura dello stesso con un software pi\`u funzionale, per facilitare la comunicazione tra operatori interni e clienti e l'integrazione con il database del sistema informativo.
+
+\subsezione{Riferimenti normativi}
+Il presente documento \`e redatto in accordo con le norme interne definite, raccolte in NormeDiProgetto.pdf, consegnato assieme a questo documento, e consultabile inoltre dal repository pubblico al quale Piero Bizzotto si appoggia.
+
+\sezione{Descrizione generale}
+
+\subsezione{Contesto d'uso del prodotto}
+
+\subsubsezione{Processi produttivi e modalit\`a d'uso}
+Il sistema sar\`a composto dal software VOIP selezionato e dalla sezione del sistema informativo riguardante l'acquisizione di nuovi contatti tramite interfaccia web, con entrambe le parti utilizzabili dagli operatori commerciali dell'azienda. 
+
+\subsubsezione{Piattaforme d'esecuzione,\\ interfacciamento con l'ambiente utilizzato}
+I moduli sono destinati ad essere utilizzati da qualunque dipendente dell'azienda (nel caso del software VOIP) e in particolare dagli utenti che utilizzano la parte del sistema informativo relativa all'acquisizione di nuovi contatti e allo smistamento degli stessi, il tutto tramite software fornito da Voispeed nel primo caso, e pagine web scritte in PHP ed interfacciate ad un database MySQL nel secondo.
+
+\subsezione{Funzioni del prodotto}
+Il prodotto deve fornire un'integrazione pi\`u completa possibile tra sistema informatico e software VOIP, in modo da garantire tramite eventi (come chiamate in arrivo, in uscita o altro) l'interazione tra il sistema e l'utente che lo sta utilizzando, ed in particolare nel nostro caso l'addetto commerciale, che deve poter contattare i/essere contattato dai possibili clienti sotto la sua tutela nel modo pi\`u rapido e naturale possibile.
+
+\subsezione{Caratteristiche degli utenti}
+\label{definizione_utente}
+Ci sono due tipologie di utente: i clienti (acquisiti o possibili) e gli utenti interni all'azienda.
+
+%\subsezione{Vincoli generali}
+
+%\subsezione{Dipendenze}
+%Si assume che i sistemi sui quali verr\`a eseguito AJAXDRAW siano dotati di uno tra i principali internet browsers disponibili: Mozilla Firefox, Google Chrome, Apple %Safari, Opera e Internet Explorer nelle loro pi\`u recenti incarnazioni.
+
+\sezione{Glossario}
+Come specificato nelle norme di progetto (NormeDiProgetto.pdf) allegate, la totalit\` a dei documenti fa riferimento ad un unico glossario (Glossario.pdf), allegato al presente documento.
+\newpage
+\sezione{Casi d'uso}
+Al seguito di questo paragrafo vengono illustrati i casi d'uso, sia grafici che narrativi, utilizzati nell'analisi dei requisiti effettuata da Piero Bizzotto. Lo scopo dei casi d'uso \`e quello di consentire una comprensione rapida ed efficace dei bisogni del cliente percepiti dall'azienda. Per una lista completa dei requisiti individuati si rimanda comunque alla lista dei requisiti di sezione \ref{listarequisiti}, cui faranno riferimento anche gli stessi casi d'uso narrativi.
+
+\subsubsezione{UC1 Caso d'uso: pulisci \underline{canvas}}
+\paragraph{Attori coinvolti} Utente.
+\paragraph{Scopo e descrizione sintetica}
+L'utente pu\`o cancellare totalmente quanto fino a quel momento \`e stato disegnato.
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item L'utente seleziona il comando per pulire il canvas. 
+\item Il canvas viene completamente cancellato.
+\end{elenconumerato}
+\paragraph{Precondizioni}  Il sistema AJAXDRAW \`e in attesa di istruzioni da parte dell' utente.
+\paragraph{Postcondizioni} Il sistema AJAXDRAW visualizza l'area di disegno vuota.
+
+
+%%%%%%%%%%%%%%%%inizio requisiti%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sezione{Lista dei requisiti}
+\label{listarequisiti}
+I requisiti elencati in seguito si dividono per tipologia (funzionale, prestazionale, di qualit\`a, di interfacciamento, d'ambiente); 
+per ognuna \`e presente una classificazione per classe di importanza (obbligatorio, desiderabile, facoltativo). Viene inoltre indicata la fonte usando un riferimento alle aspettative descritte in \textit{Aspettative.pdf}.
+\subsezione{Requisiti funzionali (RF)}
+\subsubsezione{Obbligatori (RFO)}
+\begin{elenconumerato}[\textbf{RFO-}]{\subsubsecindent}
+\item{ACO-2 - Il software VOIP permette agli utenti interni di effettuare chiamate tra di loro.}
+\item{ACO-2 - Il software VOIP permette agli utenti interni di chiamare un cliente/target tramite un collegamento nella scheda dello stesso.}
+\item{ACO-2 - Il software VOIP,all'arrivo di una telefonata esterna, cerca nel database il commerciale che tutela il cliente chiamante e inoltra la telefonata.}
+\item{ACO-2 - Se il commerciale del caso precedente non è in quel momento disponibile o è assente, il software VOIP deve inoltrare la chiamata al commerciale (o anche pi\`u di uno) sostitutivo indicato in precedenza da quello che hi il cliente in tutela.}
+\item{ACO-2 - Se nemmeno quest'ultimo \`e disponibile, allora la chiamata viene inoltrata al primo operatore disponibile.}
+\item{ACO-2 - Il SI deve permettere solo al commerciale che ha sotto tutela un cliente/target specifico di poterlo contattare.}
+\item{ACO-2 - Il SI deve tenere traccia della durata della chiamata effettuata da un commerciale ad un cliente o viceversa per verificare che tale chiamata sia stata effettivamente realizzata.}
+\item{ACO-2 - Il SI deve riconoscere automaticamente se la descrizione del contatto da parte del commerciale comprende termini che sono compatibili con un estensione del periodo di tutela di un cliente, per poterlo poi assegnare al commerciale stesso in caso affermativo, e cercare un'offerta tra gli ordini relativa a quel cliente.}
+\item{ACO-2 - Il SI si deve occupare di assegnare un target a un commerciale seguendo le determinate regole fissate dall'azienda.}
+
+
+
+\end{elenconumerato}
+
+%requisiti desiderabili
+\subsubsezione{Desiderabili (RFD)}
+\begin{elenconumerato}[\textbf{RFD-}]{\subsubsecindent}
+\item{ACF-2 - AJAXDRAW permette di disegnare a mano libera.}
+\item{ACF-2 - AJAXDRAW permette di disegnare connettori per diagrammi.}
+\item{ AJAXDRAW permette di fare una copia di un oggetto presente sul canvas.}
+\end{elenconumerato}
+
+%facoltativi
+\subsubsezione{Facoltativi (RFF)}
+\begin{elenconumerato}[\textbf{RFF-}]{\subsubsecindent}
+\item{ACF-2 - AJAXDRAW permette la creazione di spirali.}
+\item{ACF-2 - AJAXDRAW permette di utilizzare il disegno calligrafico o pennellato.}
+\item{ AJAXDRAW permette di ruotare un oggetto di 90 gradi secondo l'asse latitudinale.}
+\end{elenconumerato}
+
+%requisiti prestazionali
+\subsezione{Requisiti prestazionali}
+\subsubsezione{Obbligatori (RPO)}
+\begin{elenconumerato}[\textbf{RPO-}]{\subsubsecindent}
+\item ACO-1 - L'utente non deve notare rallentamenti durante l'utilizzo dell'applicazione che non siano direttamente imputabili alla lentezza della connessione.
+\end{elenconumerato}
+
+%Requisiti di Qualita' 
+\subsezione{Requisiti di qualit\`a (RQ)}	
+\subsubsezione{Obbligatori (RQO)}
+\begin{elenconumerato}[\textbf{RQO-}]{\subsubsecindent}
+\item ACO-8 - Il codice sorgente segue le norme interne all'azienda.
+\item ACO-8 - Il codice sorgente segue il paradigma della programmazione ad oggetti.
+\item ACO-8 - Il codice sorgente \`e completamente documentato.
+\item ACO-8 - La progettazione permetter\`a l'estensibilit\`a futura del prodotto.
+\item ACO-8 - I test del prodotto saranno documentati.
+\item ACO-5 - Il prodotto non necessita di nessuna installazione, basandosi su una pagina web HTML e PHP.
+\item ACO-5 - Il server dev'essere in grado di gestire pi\`u utenti in parallelo in modo indipendente.
+\item ACO-1 - Il funzionamento dell'applicazione dev'essere indipendente dalla risoluzione dello schermo dell'utente.
+\end{elenconumerato}
+
+%requisiti di qualita' desiderabili
+%\subsubsezione{Desiderabili (RQD)}
+%\begin{elenconumerato}[\textbf{RQD-}]{\subsubsecindent}
+%\item 
+
+%\end{elenconumerato}
+
+%inizio requisiti di interfacciamento
+\subsezione{Requisiti di interfacciamento (RI)}
+\subsubsezione{Obbligatori (RIO)}
+\begin{elenconumerato}[\textbf{RIO-}]{\subsubsecindent}
+\item ACO-7 - L'utilizzo del prodotto risulta semplice ed intuitivo grazie ad un'interfaccia grafica basata sull'uso di una toolbar.
+\item ACO-7 - La guida in linea \`e completa e di facile utilizzo per permettere all'utente di apprendere velocemente le funzionalit\`a del prodotto.
+\item ACO-7 - La guida in linea \`e richiamabile in qualsiasi momento.
+\item ACO-7 - L'uso della guida in linea non influenza il corretto funzionamento del programma. 
+\end{elenconumerato}
+
+%inizio requisiti d'ambiente
+\subsezione{Requisiti d'ambiente (RA)}
+\subsubsezione{Obbligatori (RAO)}
+\begin{elenconumerato}[\textbf{RAO-}]{\subsubsecindent}
+\item ACO-5 - Il prodotto \`e pensato per funzionare su un internet browser.
+\item ACO-5 - Il prodotto dovr\`a essere implementato seguendo gli standard del \underline{linguaggio di markup} HTML 5.
+\item ACO-6 - Il prodotto in particolare dovr\` a utilizzare il tag "canvas" appositamente creato per l'elaborazione del disegno vettoriale sul web.
+\item ACO-8 - Il software di supporto per lo sviluppo del prodotto \`e di tipo Open Source e freeware.
+\item ACD-1 - Il prodotto realizzato dovr\`a essere pubblicato sul sito \href{www.sourceforge.net}{www.sourceforge.net}, in conformit\`a con i relativi requisiti di natura Open Source, per favorire la continuit\`a del prodotto risultante.
+\item ACO-5 - Il prodotto \`e sviluppato e testato sui principali internet browsers: Mozilla Firefox, Google Chrome, Opera ed Apple Safari.
+\end{elenconumerato}
+\subsubsezione{Desiderabili (RAD)}
+\begin{elenconumerato}[\textbf{RAD-}]{\subsubsecindent}
+\item{ACF-3 - AJAXDRAW garantisce la compatibilit\`a con il browser Microsoft Internet Explorer, il quale non implementa a pieno HTML 5, tramite la libreria \H{}excanvas\H{} creata da Google.}
+\end{elenconumerato}
+
+\newpage
+
+ \subsezione{Tracciamento Aspettative - Requisiti}
+\begin{table}[h]
+\begin{center}
+     \begin{tabular}
+           {@{\extracolsep{\fill}}|c|c|}
+     \hline
+%%%%%%%%%%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      \textbf{Aspettative} & \textbf{Requisiti} \\
+%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     \hline
+     ACO-1 & RPO-1 RQO-9 \\
+     \hline
+     \multirow{2}{*}{ACO-2} & RFO-1 RFO-2 RFO-3 RFO-4 RFO-5 RFO-6 RFO-7 \\ & RFO-8 RFO-11 RFO-12 RFO-13 RFO-14 \\
+     \hline
+     ACO-3  & RFO-8  RFO-9 RFO-10 \\
+     \hline
+     ACO-4  & RFO-15 RFO-16 \\
+     \hline
+     ACO-5  & RQO-1 RQO-7 RQO-8 RAO-1 RAO-2 RAO-6 \\
+     \hline
+     ACO-6  & RAO-3 \\
+      \hline
+     ACO-7  & RIO-1 RIO-2 RIO-3 RIO-4 \\
+     \hline
+     ACO-8  & RQO-2 RQO-3 RQO-4 RQO-5 RQO-6 RAO-4 \\
+     \hline
+     ACF-1  & RFO-17 RFO-18 \\
+     \hline
+     ACF-2 & RFD-1 RFD-2 RFF-1 RFF-2 \\
+     \hline
+     ACF-3  & RAD-1 \\
+     \hline
+     ACD-1 & RAO-5 \\
+     
+%%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%
+    \hline %%FINE RIGA
+%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{tabular}
+  \caption{Aspettative - Requisiti} %INSERIRE DIDASCALIA - SE NECESSARIA -
+  \label{tab:aspreq}
+  \end{center}
+\end{table}
+
+\newpage
+
+ \subsezione{Tracciamento Requisiti - Fonte Associata}
+\begin{table}[h]
+\begin{center}
+     \begin{tabular}
+           {@{\extracolsep{\fill}}|c|c|}
+     \hline
+%%%%%%%%%%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      \textbf{Requisiti} & \textbf{Fonte Associata} \\
+%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      \hline
+     RFO-1 & F01 \\
+     \hline
+     RFO-2 & F01  \\
+     \hline
+     RFO-3 & F01\\
+     \hline
+     RFO-4 & F01 \\
+     \hline
+     RFO-5 & F01 \\
+     \hline
+     RFO-6 & F01 \\
+      \hline
+     RFO-7 & F01 \\
+     \hline
+     RFO-8 & F01 \\
+     \hline
+     RFO-9 &  F01 \\
+     \hline
+     RFO-10 & F01 \\
+     \hline
+     RFO-11 & F01 \\
+     \hline
+     RFO-12 & F01 \\
+     \hline
+     RFO-13 & F01 \\
+     \hline
+     RFO-14 & F01 \\
+     \hline
+     RFO-15 & F01 \\
+     \hline
+     RFO-16 & F01 \\
+     \hline 
+     RFO-17 & F01 \\
+     \hline
+     RFO-18 & F01 \\
+     \hline
+     RFD-1 & F01 \\
+     \hline
+     RFD-2 & F01 \\
+     %%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%
+    \hline %%FINE RIGA
+%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{tabular}
+  \caption{Requisiti - Fonte Associata prima parte} %INSERIRE DIDASCALIA - SE NECESSARIA -
+  \label{tab:reqfonte1}
+  \end{center}
+\end{table}
+     
+     
+     
+\newpage
+
+\begin{table}[h]
+\begin{center}
+     \begin{tabular}
+           {@{\extracolsep{\fill}}|c|c|}
+     \hline
+%%%%%%%%%%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      \textbf{Requisiti} & \textbf{Fonte Associata} \\
+%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     
+     \hline
+     RFD-3 & F02 \\
+     \hline
+     RFF-1 & F01 \\
+     \hline
+     RFF-2 & F01 \\
+     \hline
+     RFF-3 & F02 \\
+     \hline
+     RPO-1 & F02 \\
+     \hline
+     RQO-1 & F01 \\
+     \hline
+     RQO-2 & F02 \\
+     \hline
+     RQO-3 & F02 \\
+     \hline
+     RQO-4 & F01 \\
+     \hline
+     RQO-5 & F01 \\
+     \hline
+     RQO-6 & F01 \\
+     \hline
+     RQO-7 & F01 \\
+     \hline
+     RQO-8 & F01 \\
+     \hline
+     RQO-9 & F02 \\
+     \hline
+     RIO-1 & F01 \\
+     \hline
+     RIO-2 & F01 \\
+     \hline
+     RIO-3 & F01 \\
+     \hline
+     RIO-4 & F01 \\
+     \hline
+     RAO-1 & F01 \\
+     \hline
+     RAO-2 & F01 \\
+     \hline
+     RAO-3 & F01 \\
+     \hline
+     RAO-4 & F01 \\
+     \hline
+     RAO-5 & F01 \\
+     \hline
+     RAO-6 & F01 \\
+     \hline
+     RAD-1 & F01 \\
+     %%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%
+    \hline %%FINE RIGA
+%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{tabular}
+  \caption{Requisiti - Fonte Associata seconda parte} %INSERIRE DIDASCALIA - SE NECESSARIA -
+  \label{tab:reqfonte2}
+  \end{center}
+\end{table}
+
+\begin{elencopuntato}[\subsecindent]    
+\item[-] \textbf{F01} deriva dal capitolato 
+\item[-] \textbf{F02} deriva dalla ditta ''WebShape''
+\end{elencopuntato}
+
+\newpage
+
+ \subsezione{Tracciamento Requisiti - Use Case}
+\begin{table}[h]
+\begin{center}
+     \begin{tabular}
+           {@{\extracolsep{\fill}}|c|c|}
+     \hline
+%%%%%%%%%%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      \textbf{Requisiti} & \textbf{Use Case} \\
+%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      \hline
+     RA0-1 & UC0 \\
+     \hline
+     RFO-17 & UC1  \\
+     \hline
+     RIO-2  RIO-4 & UC2\\
+     \hline
+     RIO-3 & UC3 \\
+     \hline
+     RFO-13 & UC4 \\
+     \hline
+     RFO-14 & UC5 UC6 \\
+      \hline
+     RFO-15 RFO-16 & UC7 UC8 \\
+     \hline
+     RFO-1 RFO-2 RFO-9 & UC9.1 \\
+     \hline
+     RFO-3 RFO-9 &  UC9.2 \\
+     \hline
+     RFO-4 RFO-9 & UC9.3 \\
+     \hline
+     RFO-5 RFO-9 & UC9.4 \\
+     \hline
+     RFO-6 RFO-7 RFO-9 & UC9.5 \\
+     \hline
+     RFO-9 & UC9.6 UC9.7 \\
+     \hline
+     RFF-1 RFO-9 & UC9.9 \\
+     \hline
+     RFD-1 RFO-9 & UC9.10 \\
+     \hline
+     RFF-2 RFO-9 & UC9.11 \\
+     \hline 
+     RFD-2 RFO-9 & UC9.12 \\
+     \hline
+     RFO-7 & UC 9.8 UC10.1 UC10.2 \\
+     \hline
+     RFO-9 & UC10.3 UC10.4 UC10.5 \\
+     \hline
+     RFO-8 & UC10.5 UC10.7 UC10.10 \\
+     \hline
+     RFO-10 & UC10.8 UC10.9 \\
+     \hline
+     RFO-18 & UC10.11 \\
+     \hline
+     RFD-3 & UC10.13 \\
+     \hline
+     RFF-3 & UC10.14 \\
+     
+%%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%
+    \hline %%FINE RIGA
+%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{tabular}
+  \caption{Requisiti - Use Case} %INSERIRE DIDASCALIA - SE NECESSARIA -
+  \label{tab:requisiti}
+  \end{center}
+\end{table}
+\end{document}

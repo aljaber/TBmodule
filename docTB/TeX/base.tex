@@ -1,0 +1,136 @@
+\documentclass[12pt,a4paper,italian]{article}
+
+
+\usepackage[italian]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{ifthen}
+\usepackage{wrapfig}
+%\author{Piero Bizzotto}
+\usepackage[top=2cm,bottom=5cm,left=80pt,right=80pt]{geometry}
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.jpg,.png}
+
+\newcommand{\ajax}{GESTIONE DELLA COMUNICAZIONE TRA CLIENTI E OPERATORI COMMERCIALI IN UN SISTEMA CRM}
+\newcommand{\sito}{\href{http://ajaxdraw.sourceforge.net}{http://ajaxdraw.sourceforge.net}}
+
+\setlength{\parindent}{0pt} %settato indentazione di default 
+\setlength{\headheight}{3cm} %settato grandezza header...in altre parole, quanto distanzio il doc dall'intestazione
+
+\usepackage{fancyhdr} %pacchetto per le intestazioni
+\pagestyle{fancy} %uso del pacchetto
+
+
+\fancyhead{} %annulla head di default
+\fancyfoot{} %annulla foot di default
+
+
+\usepackage{lastpage} %setto pg di pgtot a rfoot
+     \rfoot{pagina \thepage\ di \pageref{LastPage}}
+
+
+\lfoot{Versione: \insertversion} %setto versione doc a lfoot
+\renewcommand{\footrulewidth}{0.5pt} %ridefinisco il valore della riga di intestazione
+\renewcommand{\headrulewidth}{0.5pt} %ridefinisco il valore della riga di pie' di pagina
+
+\newcommand{\insertversion}{0.0} %definisco il nuovo comando per inserire la versione
+
+
+%\lhead{  \begin{Huge} \ajax \end{Huge} \\  %intestazione di sinistra
+				%	%\begin{Large}	Software per il Disegno Grafico\\ in Tecnologie Web \end{Large}  
+	%				\begin{normalsize}\sito \end{normalsize}
+	%		%\\ versione documento: \insertversion\ del \today} %setto l'intestazione sx
+	%	}
+\chead{ %includo logo nell'intestazione dx
+	 	\includegraphics[scale=0.3]{../tecnobit.jpg}  
+}
+
+
+%CREAZIONE ELENCHI NUMERATI PERSONALIZZATI
+\newcounter{Lcount}
+\newcounter{Rcount}
+\setcounter{Lcount}{0}
+\setcounter{Rcount}{0}
+
+\newenvironment{elenconumerato}[2][ ]
+{
+  \begin{list}{#1\arabic{Lcount}.}
+    {
+	\setcounter{Rcount}{\value{Lcount}}
+	\setcounter{Lcount}{0} 
+	\usecounter{Lcount} 
+\addtolength{\leftmargin}{#2pt}
+	}
+}
+{
+  \end{list}
+ \setcounter{Lcount}{\value{Rcount}}
+}
+
+%CREAZIONE ELENCHI PUNTATI
+\newenvironment{elencopuntato}[1][]
+{
+\begin{list}{\textbullet} %\itemindent=#1pt
+	{
+	\addtolength{\leftmargin}{#1pt}
+	}
+} 
+{
+\end{list}
+}
+
+
+\newenvironment{elencodescrittivo}[1][]{\begin{description} \setlength{\itemindent}{#1pt} \addtolength{\leftmargin}{#1pt}} {\end{description}}
+
+\newcommand{\TITOLODOC}{Titolo}
+
+%footer centrale
+\cfoot{ \TITOLODOC \\  E-mail:    \href{ mailto:webshape.contact@gmail.com}{ webshape.contact@gmail.com}  }
+
+%INSERIMENTO IMMAGINI
+\newcommand{\imagerealsize}[1]{\vspace{20pt} \includegraphics{#1} }
+\newcommand{\imageadapted}[1]{\vspace{20pt} \includegraphics[width=1\textwidth]{#1} }
+
+\newcommand{\glosspath}{.\glossario}
+\newcommand{\gloss}[1]{\hyperref{\glosspath~\glossario.pdf}{}{#1}{#1}}
+
+\hypersetup{
+    %bookmarks=true,         % show bookmarks bar?
+    %unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+	%pdftoolbar=true,        % show Acrobat’s toolbar?
+	%pdfmenubar=true,        % show Acrobat’s menu?
+    %pdffitwindow=true,      % page fit to window when opened
+    %pdftitle={My title},    % title
+    %pdfauthor={Author},     % author
+    %pdfsubject={Subject},   % subject of the document
+    %pdfnewwindow=true,      % links in new window
+    %pdfkeywords={keywords}, % list of keywords
+    colorlinks=true,         % false: boxed links; true: colored links
+    linkcolor=black,           % color of internal links
+    %citecolor=green,        % color of links to bibliography
+    %filecolor=magenta,      % color of file links
+    urlcolor=teal    % color of external links
+%	linktocpage=false;
+}
+
+
+%COLORAZIONE TESTO
+\newcommand{\blue}[1]{{\color {blue} #1}} 
+\newcommand{\red}[1]{{\color {red} #1}}
+\newcommand{\green}[1]{{\color {green} #1}}
+\newcommand{\sezione}[1]{\leftskip=0pt \section{#1} \leftskip=18pt}
+\newcommand{\subsezione}[1]{\leftskip=18pt \subsection{#1} \leftskip=36pt}
+\newcommand{\subsubsezione}[1]{\leftskip=36pt \subsubsection{#1} \leftskip=54pt}
+\newcommand{\subsubsecindent}{54}
+\newcommand{\subsecindent}{36}
+\newcommand{\secindent}{18}
+\newcommand{\normindent}{8}
+\newcommand{\code}[1]{{\bfseries \texttt{#1}}}
+\newcommand{\paragrafo}[1]{\leftskip=36pt \paragraph{#1} \leftskip=54pt}
+\newcommand{\subparagrafo}[1]{\leftskip=54pt \subparagraph{#1} \leftskip=72pt}

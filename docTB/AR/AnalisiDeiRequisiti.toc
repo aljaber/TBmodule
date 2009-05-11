@@ -1,0 +1,16 @@
+\select@language {italian}
+\contentsline {section}{\numberline {1}Introduzione}{5}{section.1}
+\contentsline {subsection}{\numberline {1.1}Scopo del documento}{5}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Scopo del prodotto}{5}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Riferimenti normativi}{5}{subsection.1.3}
+\contentsline {section}{\numberline {2}Descrizione generale}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Contesto d'uso del prodotto}{5}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Processi produttivi e modalit\`a d'uso}{5}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Piattaforme d'esecuzione,\\ interfacciamento con l'ambiente utilizzato}{5}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Funzioni del prodotto}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Caratteristiche degli utenti}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Vincoli generali}{6}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Dipendenze}{6}{subsection.2.5}
+\contentsline {section}{\numberline {3}Glossario}{6}{section.3}
+\contentsline {section}{\numberline {4}Casi d'uso}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}UC0 Caso d'uso: use case generale}{7}{subsection.4.1}
