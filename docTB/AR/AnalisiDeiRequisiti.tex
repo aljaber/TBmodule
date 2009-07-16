@@ -2,7 +2,7 @@
 \usepackage{multirow}
 \begin{document}
 
-\renewcommand{\insertversion}{0.0} %INSERIRE LA VERSIONE QUI DENTRO STILE x.x.xx
+\renewcommand{\insertversion}{0.5} %INSERIRE LA VERSIONE QUI DENTRO STILE x.x.xx
 \renewcommand{\TITOLODOC}{Analisi dei Requisiti} %INSERIRE IL TITOLO DEL DOCUMENTO DA FAR COMPARIRE A PIE PAGINA
 
 \begin{titlepage}
@@ -13,14 +13,14 @@
 \vspace{20pt}
 
 \begin{center}
-	\begin{Huge}
+	\begin{Large}
 				\textbf{GESTIONE DELLA COMUNICAZIONE TRA CLIENTI E OPERATORI COMMERCIALI IN UN SISTEMA CRM}
-	\end{Huge}
+	\end{Large}
 \end{center}			
 
 \begin{center}
 	\begin{large}
-				\textbf{Software per il Disegno Grafico\\ in Tecnologie Web}
+			%	\textbf{Software per il Disegno Grafico\\ in Tecnologie Web}
 	\end{large}
 \end{center}			
 
@@ -58,7 +58,7 @@ Questo documento si prefigge di presentare lo studio effettuato da Piero Bizzott
 Tale studio \`e mirato alla comprensione dei bisogni espressi dall'azienda sopra citata e alla loro formalizzazione e classificazione in requisiti informatici. In particolare quelli funzionali individuati nel documento verranno espressi anche mediante casi d'uso, sia narrativi che grafici. 
 
 \section*{\LARGE Stato del documento:}
-	Formale Esterno
+	Formale Esterno.
 \hangindent=0pt
 
 \section*{\LARGE Redazione:}
@@ -140,7 +140,7 @@ Tale studio \`e mirato alla comprensione dei bisogni espressi dall'azienda sopra
 			\multirow{1}{*}{Pre-RR}  &  Bizzotto Piero\\
 									%&  \\
 			\hline
-			\multirow{1}{*}{RR-RPP} & Bizzotto Pieroo\\
+			\multirow{1}{*}{RR-RPP} & Bizzotto Piero\\
 									%& \\
 									
 			\hline
@@ -159,8 +159,8 @@ Tale studio \`e mirato alla comprensione dei bisogni espressi dall'azienda sopra
 \section*{\LARGE Lista di Distribuzione:}
 
 	\begin{elenconumerato}{\normindent}
-		\item Piero Bizzotto
-		\item Il committente Rossi Marco in rappresentanza \\  dell'azienda proponente Tecnobit SRL
+		\item Piero Bizzotto;
+		\item Il committente Rossi Marco in rappresentanza \\  dell'azienda proponente Tecnobit SRL.
 	\end{elenconumerato}
 
 \newpage
@@ -203,7 +203,7 @@ Tale studio \`e mirato alla comprensione dei bisogni espressi dall'azienda sopra
 Il presente documento \`e indirizzato a fornire una descrizione in grado di identificare i moduli software da sviluppare, ed elenca pertanto i requisiti, impliciti, espliciti, funzionali e non funzionali, individuati per i prodotti di cui sopra.
 
 \subsezione{Scopo del prodotto}
-I moduli scelti sono due: la gestione delle richieste provenienti da possibili clienti futuri (informazioni, software dimostrativo) per favorire il reparto commerciale dell'azienda nei contatti con i clienti stessi, integrando tale gestione nel nuovo sistema CRM in fase di costruzione; analisi di eventuali features aggiuntive disponibili tramite il centralino VOIP attualmente in uso (Voispeed) e considerazioni su una possibile sostituzione futura dello stesso con un software pi\`u funzionale, per facilitare la comunicazione tra operatori interni e clienti e l'integrazione con il database del sistema informativo.
+I moduli scelti sono due: la gestione delle richieste provenienti da possibili clienti futuri (principalmente download di software dimostrativo sviluppato dall'azienda) per favorire il reparto commerciale nei contatti con i clienti stessi, integrando tale gestione nel nuovo sistema CRM in fase di costruzione; analisi di eventuali features aggiuntive disponibili tramite il centralino VOIP attualmente in uso (Voispeed) e considerazioni su una possibile sostituzione futura dello stesso con un software pi\`u funzionale, per facilitare la comunicazione tra operatori interni e clienti e l'integrazione con il database del sistema informativo.
 
 \subsezione{Riferimenti normativi}
 Il presente documento \`e redatto in accordo con le norme interne definite, raccolte in NormeDiProgetto.pdf, consegnato assieme a questo documento, e consultabile inoltre dal repository pubblico al quale Piero Bizzotto si appoggia.
@@ -216,10 +216,10 @@ Il presente documento \`e redatto in accordo con le norme interne definite, racc
 Il sistema sar\`a composto dal software VOIP selezionato e dalla sezione del sistema informativo riguardante l'acquisizione di nuovi contatti tramite interfaccia web, con entrambe le parti utilizzabili dagli operatori commerciali dell'azienda. 
 
 \subsubsezione{Piattaforme d'esecuzione,\\ interfacciamento con l'ambiente utilizzato}
-I moduli sono destinati ad essere utilizzati da qualunque dipendente dell'azienda (nel caso del software VOIP) e in particolare dagli utenti che utilizzano la parte del sistema informativo relativa all'acquisizione di nuovi contatti e allo smistamento degli stessi, il tutto tramite software fornito da Voispeed nel primo caso, e pagine web scritte in PHP ed interfacciate ad un database MySQL nel secondo.
+I moduli sono destinati ad essere utilizzati da qualunque dipendente dell'azienda (nel caso del software VOIP) e in particolare dagli utenti che utilizzano la parte del sistema informativo relativa all'acquisizione di nuovi clienti tramite contatti di vario tipo e allo smistamento degli stessi, il tutto tramite software fornito da Voispeed nel primo caso, e pagine web scritte in PHP ed interfacciate ad un database MySQL nel secondo.
 
 \subsezione{Funzioni del prodotto}
-Il prodotto deve fornire un'integrazione pi\`u completa possibile tra sistema informatico e software VOIP, in modo da garantire tramite eventi (come chiamate in arrivo, in uscita o altro) l'interazione tra il sistema e l'utente che lo sta utilizzando, ed in particolare nel nostro caso l'addetto commerciale, che deve poter contattare i/essere contattato dai possibili clienti sotto la sua tutela nel modo pi\`u rapido e naturale possibile.
+Il prodotto deve fornire un'integrazione pi\`u completa possibile tra sistema informatico e software VOIP, in modo da garantire tramite eventi (come chiamate in arrivo, in uscita o altro) l'interazione tra il sistema e l'utente che lo sta utilizzando, ed in particolare nel nostro caso l'addetto commerciale, che deve poter contattare i/essere contattato dai possibili clienti sotto la sua tutela nel modo pi\`u rapido e naturale possibile, ed agire sui dati del sistema riguardanti questi clienti in modo flessibile ed efficace.
 
 \subsezione{Caratteristiche degli utenti}
 \label{definizione_utente}
@@ -236,20 +236,192 @@ Come specificato nelle norme di progetto (NormeDiProgetto.pdf) allegate, la tota
 \sezione{Casi d'uso}
 Al seguito di questo paragrafo vengono illustrati i casi d'uso, sia grafici che narrativi, utilizzati nell'analisi dei requisiti effettuata da Piero Bizzotto. Lo scopo dei casi d'uso \`e quello di consentire una comprensione rapida ed efficace dei bisogni del cliente percepiti dall'azienda. Per una lista completa dei requisiti individuati si rimanda comunque alla lista dei requisiti di sezione \ref{listarequisiti}, cui faranno riferimento anche gli stessi casi d'uso narrativi.
 
-\subsubsezione{UC1 Caso d'uso: pulisci \underline{canvas}}
-\paragraph{Attori coinvolti} Utente.
+\subsezione{UC0 Caso d'uso: use case generale}
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.7]{UC0.png}
+\caption{UC0 - Generico}
+\end{figure}
+
+\text{Segue ora una descrizione testuale dei casi d'uso presentati dal grafico.}
+
+\subsubsezione{UC1 Caso d'uso: Chiamata in arrivo}
+Si rimanda a \ref{uc_chiamata_in_arrivo} per una descrizione approfondita.
+
+\subsubsezione{UC2 Caso d'uso: Download versione dimostrativa}
+Si rimanda a \ref{uc_download} per una descrizione approfondita.
+
+\subsubsezione{UC3 Caso d'uso: Invia Fax}
+\paragraph{Attori coinvolti} Server Voispeed, Database, Utente Interno.
 \paragraph{Scopo e descrizione sintetica}
-L'utente pu\`o cancellare totalmente quanto fino a quel momento \`e stato disegnato.
+L'utente interno invia un fax, il quale viene registrato dal centralino VOIP in un file di testo, e quindi consultato in seguito dal mittente tramite il sistema informativo.
 \paragraph{Flusso di eventi}
 \begin{elenconumerato}[\textbf{}]{\subsubsecindent}
-\item L'utente seleziona il comando per pulire il canvas. 
-\item Il canvas viene completamente cancellato.
+\item L'utente crea un nuovo fax tramite il client Voispeed.
+\item Il fax viene gestito dal server che si occupa di inoltrarlo.
+\item Il sistema informativo tiene traccia dell'invio del fax controllando il log dei fax inviati di Voispeed, consentendo ad ogni utente, se abilitato all'invio, di consultare un report con i fax da lui inviati.
 \end{elenconumerato}
-\paragraph{Precondizioni}  Il sistema AJAXDRAW \`e in attesa di istruzioni da parte dell' utente.
-\paragraph{Postcondizioni} Il sistema AJAXDRAW visualizza l'area di disegno vuota.
+\paragraph{Precondizioni} L'utente \` e pronto ad inviare un nuovo fax.
+\paragraph{Postcondizioni} Il fax \` e  stato inviato e una sua copia \` e ora registrata nel log del software Voispeed.
 
+\subsubsezione{UC4 Caso d'uso: Ricevi Fax}
+\paragraph{Attori coinvolti} Utente Esterno, Server Voispeed, Database.
+\paragraph{Scopo e descrizione sintetica}
+Un utente esterno invia un fax all'azienda, il quale viene gestito dal centralino Voispeed che si occupa di registrarlo nel database.
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item Un utente esterno invia un fax all'azienda.
+\item Il centralino raccoglie il fax e lo gestisce.
+\item Nel database viene salvata una voce riguardante il fax ricevuto.
+\item Un utente interno con i dovuti permessi si occupa di associare il fax arrivato al cliente corretto, e di inoltrarlo (se necessario) all'operatore commerciale interessato.
+\end{elenconumerato}
+\paragraph{Precondizioni} Il centralino \`e pronto a ricevere un fax dall'esterno.
+\paragraph{Postcondizioni} Il centralino e un operatore hanno gestito il fax arrivato.
+
+\newpage
+\subsezione{Vista UC1 - Chiamata in arrivo}
+\label{uc_chiamata_in_arrivo}
+Il seguente grafico illustra le interazioni che avvengono a seguito della ricezione di una telefonata da un cliente.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.6]{UC1.png}
+\caption{UC1 - Chiamata in arrivo}
+\end{figure}
+
+\subsubsezione{UC1.1 Chiama}
+\paragraph{Attori coinvolti} Cliente esterno, Server Voispeed.
+\paragraph{Scopo e descrizione sintetica}
+Il cliente telefona alla ditta, che gestisce la telefonata tramite il software VOIP.
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item Il cliente telefona all'azienda.
+\item Il centralino VOIP riceve la telefonata e si prepara ad inoltrarla.
+\end{elenconumerato}
+\paragraph{Precondizioni}  Il centralino \` e in attesa di una telefonata esterna.
+\paragraph{Postcondizioni} Il centralino ha risposto e attende di sapere dal cliente il tipo di operatore con cui questi vuole parlare.
+
+\subsubsezione{UC1.2 Controllo del tipo di chiamata}
+\paragraph{Attori coinvolti} Server Voispeed.
+\paragraph{Scopo e descrizione sintetica}
+Il centralino VOIP elabora la richiesta dell'utente impostando il reparto da contattare indicatogli dal cliente (commerciale, assistenza, amministrazione).
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item Il centralino ha ricevuto la telefonata.
+\item Il centralino imposta il reparto al quale passare la telefonata.
+\end{elenconumerato}
+\paragraph{Precondizioni} Il centralino \` e pronto a selezionare il reparto da passare al cliente.
+\paragraph{Postcondizioni} Il centralino ha impostato il reparto desiderato dal cliente chiamante.
+
+\subsubsezione{UC1.3 Inoltra ad un utente del gruppo corretto}
+\paragraph{Attori coinvolti} Server Voispeed, utente interno.
+\paragraph{Scopo e descrizione sintetica}
+Il centralino VOIP  inoltra la chiamata al reparto indicatogli dal cliente (commerciale, assistenza, amministrazione).
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item Il centralino verifica a che reparto passare la telefonata.
+\item Il centralino inoltra la chiamata all'utente interno corretto.
+\end{elenconumerato}
+\paragraph{Precondizioni} Il centralino \` e pronto ad inoltrare la telefonata all'utente interno corretto.
+\paragraph{Postcondizioni} Il centralino ha inoltrato correttamente la chiamata.
+
+\subsubsezione{UC1.4 Controlla dati del cliente chiamante}
+\paragraph{Attori coinvolti} Server Voispeed, Database.
+\paragraph{Scopo e descrizione sintetica}
+Nel caso di telefonata commerciale, il client Voispeed dell'utente a cui viene inoltrata la chiamata raccoglie i dati del cliente chiamante (tramite il numero di telefono e utilizzando il database) indicando, se presenti, le indicazioni sul commerciale che ha in tutela il dato cliente, seguendo le regole del regolamento interno dell'azienda.
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item Il client Voispeed dell'operatore controlla se il cliente chiamante \` e gi\` a tutelato da un commerciale per decidere a chi inoltrare la chiamata.
+\end{elenconumerato}
+\paragraph{Precondizioni} Il client \`e pronto a controllare quale operatore commerciale ha sotto tutela il cliente chiamante.
+\paragraph{Postcondizioni} Il client ha controllato i dati del cliente, se esistente, e indica all'operatore chi, se presente, tutela il cliente che sta chiamando.
+
+
+\subsubsezione{UC1.5 Salva il log della chiamata}
+\paragraph{Attori coinvolti} Server Voispeed, Database.
+\paragraph{Scopo e descrizione sintetica}
+Il centralino VOIP salva nel database una traccia della telefonata avvenuta.
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item Il centralino raccoglie i dati della telefonata.
+\item Il centralino scrive nel database tali dati.
+\end{elenconumerato}
+\paragraph{Precondizioni} Il centralino \`e pronto a registrare i dati della telefonata.
+\paragraph{Postcondizioni} Il centralino ha registrato nel database i dati della telefonata avvenuta.
+
+\newpage
+\subsezione{Vista UC2 - Download Versione Dimostrativa}
+\label{uc_download}
+Il seguente grafico illustra le interazioni che avvengono a seguito alla richiesta di donwload della versione dimostrativa di uno dei prodotti dell'azienda.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.7]{UC2.png}
+\caption{UC2 - Download Demo}
+\end{figure}
+
+\subsubsezione{UC2.1 Compila Form Richiesta Demo}
+\paragraph{Attori coinvolti} Utente Esterno, Server Tecnobit.
+\paragraph{Scopo e descrizione sintetica}
+L'utente esterno compila il form per scaricare un dimostrativo, richiedere un DVD o provare un programma nella sua versione online inserendo i propri dati personali specificando il prodotto selezionato.
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item Il cliente seleziona il prodotto del quale vuole richiedere una versione dimostrativa o altro.
+\item Il cliente compila il form apposito per il download.
+\end{elenconumerato}
+\paragraph{Precondizioni} Il sistema ha caricato la pagina con il form per il download.
+\paragraph{Postcondizioni} L'utente esterno ha compilato il form e sta per inviare la richiesta.
+
+\subsubsezione{UC2.2 Gestisci la richiesta}
+\paragraph{Attori coinvolti} Utente Esterno, Server Tecnobit.
+\paragraph{Scopo e descrizione sintetica}
+Il sistema elabora la richiesta effettuata dall'utente esterno.
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item Il cliente invia la richiesta cliccando sull'apposito tasto.
+\item Il sistema elabora i dati inviati, controllando i dati del richiedente.
+\end{elenconumerato}
+\paragraph{Precondizioni} L'utente ha compilato il form di richiesta.
+\paragraph{Postcondizioni} Il sistema ha elaborato la richiesta dell'utente.
+
+\subsubsezione{UC2.3 Invio e-mail con link}
+\paragraph{Attori coinvolti} Utente Esterno, Server Tecnobit.
+\paragraph{Scopo e descrizione sintetica}
+Il sistema invia un email all'utente con il link per procedere allo scaricamento della versione dimostrativa del prodotto.
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item Il sistema raccoglie i dati dell'utente, tra i quali l'indirizzo email.
+\item Il sistema invia la mail con il link.
+\end{elenconumerato}
+\paragraph{Precondizioni} Il sistema ha ricevuto i dati dell'utente.
+\paragraph{Postcondizioni} Il sistema ha inviato il link per lo scaricamento all'utente.
+
+\subsubsezione{UC2.4 Scarica Software}
+\paragraph{Attori coinvolti} Utente Esterno, Server Tecnobit.
+\paragraph{Scopo e descrizione sintetica}
+L'utente scarica il software scelto dal link ricevuto per email.
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item L'utente riceve la mail.
+\item L'utente scarica la demo tramite il link fornitogli.
+\end{elenconumerato}
+\paragraph{Precondizioni} L'utente attende la mail dal sistema.
+\paragraph{Postcondizioni} L'utente ha scaricato la versione dimostrativa del software.
+
+\subsubsezione{UC2.5 Inserisci richiesta}
+\paragraph{Attori coinvolti}Database, Server Tecnobit.
+\paragraph{Scopo e descrizione sintetica}
+Nel database vengono inseriti i dati dell'utente che ha effettuato la richiesta di download.
+\paragraph{Flusso di eventi}
+\begin{elenconumerato}[\textbf{}]{\subsubsecindent}
+\item Il sistema raccoglie i dati dell'utente.
+\item Viene creata una voce nel database che descrive l'utente e l'operazione da lui effettuata.
+\end{elenconumerato}
+\paragraph{Precondizioni} L'utente attende la mail dal sistema.
+\paragraph{Postcondizioni} L'utente ha scaricato la versione dimostrativa del software.
 
 %%%%%%%%%%%%%%%%inizio requisiti%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \sezione{Lista dei requisiti}
 \label{listarequisiti}
 I requisiti elencati in seguito si dividono per tipologia (funzionale, prestazionale, di qualit\`a, di interfacciamento, d'ambiente); 
@@ -257,274 +429,81 @@ per ognuna \`e presente una classificazione per classe di importanza (obbligator
 \subsezione{Requisiti funzionali (RF)}
 \subsubsezione{Obbligatori (RFO)}
 \begin{elenconumerato}[\textbf{RFO-}]{\subsubsecindent}
-\item{ACO-2 - Il software VOIP permette agli utenti interni di effettuare chiamate tra di loro.}
-\item{ACO-2 - Il software VOIP permette agli utenti interni di chiamare un cliente/target tramite un collegamento nella scheda dello stesso.}
-\item{ACO-2 - Il software VOIP,all'arrivo di una telefonata esterna, cerca nel database il commerciale che tutela il cliente chiamante e inoltra la telefonata.}
-\item{ACO-2 - Se il commerciale del caso precedente non è in quel momento disponibile o è assente, il software VOIP deve inoltrare la chiamata al commerciale (o anche pi\`u di uno) sostitutivo indicato in precedenza da quello che hi il cliente in tutela.}
-\item{ACO-2 - Se nemmeno quest'ultimo \`e disponibile, allora la chiamata viene inoltrata al primo operatore disponibile.}
-\item{ACO-2 - Il SI deve permettere solo al commerciale che ha sotto tutela un cliente/target specifico di poterlo contattare.}
-\item{ACO-2 - Il SI deve tenere traccia della durata della chiamata effettuata da un commerciale ad un cliente o viceversa per verificare che tale chiamata sia stata effettivamente realizzata.}
-\item{ACO-2 - Il SI deve riconoscere automaticamente se la descrizione del contatto da parte del commerciale comprende termini che sono compatibili con un estensione del periodo di tutela di un cliente, per poterlo poi assegnare al commerciale stesso in caso affermativo, e cercare un'offerta tra gli ordini relativa a quel cliente.}
-\item{ACO-2 - Il SI si deve occupare di assegnare un target a un commerciale seguendo le determinate regole fissate dall'azienda.}
-
-
+\item{Il software VOIP permette agli utenti interni di effettuare chiamate tra di loro.}
+\item{Il software VOIP permette agli utenti interni di chiamare un cliente/target tramite un collegamento nella scheda dello stesso.}
+\item{Il software VOIP, all'arrivo di una telefonata esterna, cerca nel database il commerciale che tutela il cliente chiamante e inoltra la telefonata.}
+\item{Se il commerciale del caso precedente non \`e  in quel momento disponibile o assente, il software VOIP deve inoltrare la chiamata al suo sostituto deciso in precedenza (o anche pi\`u di uno) da colui che ha il cliente sotto tutela.}
+\item{Se nemmeno quest'ultimo \`e disponibile, allora la chiamata viene inoltrata al primo operatore disponibile, oppure viene chiesto al cliente di lasciare un messaggio.}
+\item{Il SI deve permettere solo al commerciale che ha sotto tutela un cliente/target specifico di poterlo contattare.}
+\item{Il SI deve tenere traccia della chiamata effettuata da un commerciale ad un cliente e viceversa, per poter verificare che tale chiamata sia stata effettivamente realizzata.}
+\item{Il SI deve riconoscere automaticamente se la descrizione del contatto da parte del commerciale comprende termini che sono compatibili con un estensione del periodo di tutela di un cliente, per poterlo poi assegnare al commerciale stesso in caso affermativo, e cercare un'offerta tra gli ordini relativa a quel cliente.}
+\item{Il SI si deve occupare di assegnare un target a un commerciale seguendo le determinate regole fissate dall'azienda.}
+\item{Il software VOIP consente l'invio e la ricezione di fax.}
+\item{Il SI registra ogni fax ricevuto o inviato nel database, per mantenere uno storico dettagliato sul flusso di fax.}
+\item{Il SI, in caso di richiesta di download di una versione dimostrativa di un prodotto, controlla nel database la presenza o meno di dati riguardanti il cliente stesso, ed in caso negativo inserirli.}
+\item{Il SI fornisce delle viste complete per visualizzare i dati sulle telefonate effettuate.}
+\item{Il SI fornisce delle viste complete per visualizzare i dati delle richieste di download effettuate.}
 
 \end{elenconumerato}
 
 %requisiti desiderabili
-\subsubsezione{Desiderabili (RFD)}
-\begin{elenconumerato}[\textbf{RFD-}]{\subsubsecindent}
-\item{ACF-2 - AJAXDRAW permette di disegnare a mano libera.}
-\item{ACF-2 - AJAXDRAW permette di disegnare connettori per diagrammi.}
-\item{ AJAXDRAW permette di fare una copia di un oggetto presente sul canvas.}
-\end{elenconumerato}
+%\subsubsezione{Desiderabili (RFD)}
+%\begin{elenconumerato}[\textbf{RFD-}]{\subsubsecindent}
+%\item{}
+%\end{elenconumerato}
 
 %facoltativi
-\subsubsezione{Facoltativi (RFF)}
-\begin{elenconumerato}[\textbf{RFF-}]{\subsubsecindent}
-\item{ACF-2 - AJAXDRAW permette la creazione di spirali.}
-\item{ACF-2 - AJAXDRAW permette di utilizzare il disegno calligrafico o pennellato.}
-\item{ AJAXDRAW permette di ruotare un oggetto di 90 gradi secondo l'asse latitudinale.}
-\end{elenconumerato}
+%\subsubsezione{Facoltativi (RFF)}
+%\begin{elenconumerato}[\textbf{RFF-}]{\subsubsecindent}
+%\item{}
+%\end{elenconumerato}
 
 %requisiti prestazionali
 \subsezione{Requisiti prestazionali}
 \subsubsezione{Obbligatori (RPO)}
 \begin{elenconumerato}[\textbf{RPO-}]{\subsubsecindent}
-\item ACO-1 - L'utente non deve notare rallentamenti durante l'utilizzo dell'applicazione che non siano direttamente imputabili alla lentezza della connessione.
+\item  L'utente non deve notare rallentamenti durante l'utilizzo dell'applicazione che non siano direttamente imputabili alla lentezza della connessione.
 \end{elenconumerato}
 
 %Requisiti di Qualita' 
 \subsezione{Requisiti di qualit\`a (RQ)}	
 \subsubsezione{Obbligatori (RQO)}
 \begin{elenconumerato}[\textbf{RQO-}]{\subsubsecindent}
-\item ACO-8 - Il codice sorgente segue le norme interne all'azienda.
-\item ACO-8 - Il codice sorgente segue il paradigma della programmazione ad oggetti.
-\item ACO-8 - Il codice sorgente \`e completamente documentato.
-\item ACO-8 - La progettazione permetter\`a l'estensibilit\`a futura del prodotto.
-\item ACO-8 - I test del prodotto saranno documentati.
-\item ACO-5 - Il prodotto non necessita di nessuna installazione, basandosi su una pagina web HTML e PHP.
-\item ACO-5 - Il server dev'essere in grado di gestire pi\`u utenti in parallelo in modo indipendente.
-\item ACO-1 - Il funzionamento dell'applicazione dev'essere indipendente dalla risoluzione dello schermo dell'utente.
+\item Il codice sorgente segue le norme interne all'azienda.
+\item Il codice sorgente segue il paradigma della programmazione ad oggetti.
+\item Il codice sorgente \`e completamente documentato.
+\item La progettazione permetter\`a l'estensibilit\`a futura del prodotto.
+\item I test del prodotto saranno documentati.
+\item Il server dev'essere in grado di gestire pi\`u utenti in parallelo in modo indipendente.
 \end{elenconumerato}
 
 %requisiti di qualita' desiderabili
 %\subsubsezione{Desiderabili (RQD)}
 %\begin{elenconumerato}[\textbf{RQD-}]{\subsubsecindent}
 %\item 
-
 %\end{elenconumerato}
 
 %inizio requisiti di interfacciamento
 \subsezione{Requisiti di interfacciamento (RI)}
 \subsubsezione{Obbligatori (RIO)}
 \begin{elenconumerato}[\textbf{RIO-}]{\subsubsecindent}
-\item ACO-7 - L'utilizzo del prodotto risulta semplice ed intuitivo grazie ad un'interfaccia grafica basata sull'uso di una toolbar.
-\item ACO-7 - La guida in linea \`e completa e di facile utilizzo per permettere all'utente di apprendere velocemente le funzionalit\`a del prodotto.
-\item ACO-7 - La guida in linea \`e richiamabile in qualsiasi momento.
-\item ACO-7 - L'uso della guida in linea non influenza il corretto funzionamento del programma. 
+\item L'utilizzo del prodotto risulta semplice ed intuitivo grazie ad un'interfaccia grafica che guida l'utente sulle opzioni possibili.
 \end{elenconumerato}
 
 %inizio requisiti d'ambiente
 \subsezione{Requisiti d'ambiente (RA)}
 \subsubsezione{Obbligatori (RAO)}
 \begin{elenconumerato}[\textbf{RAO-}]{\subsubsecindent}
-\item ACO-5 - Il prodotto \`e pensato per funzionare su un internet browser.
-\item ACO-5 - Il prodotto dovr\`a essere implementato seguendo gli standard del \underline{linguaggio di markup} HTML 5.
-\item ACO-6 - Il prodotto in particolare dovr\` a utilizzare il tag "canvas" appositamente creato per l'elaborazione del disegno vettoriale sul web.
-\item ACO-8 - Il software di supporto per lo sviluppo del prodotto \`e di tipo Open Source e freeware.
-\item ACD-1 - Il prodotto realizzato dovr\`a essere pubblicato sul sito \href{www.sourceforge.net}{www.sourceforge.net}, in conformit\`a con i relativi requisiti di natura Open Source, per favorire la continuit\`a del prodotto risultante.
-\item ACO-5 - Il prodotto \`e sviluppato e testato sui principali internet browsers: Mozilla Firefox, Google Chrome, Opera ed Apple Safari.
+\item Il prodotto \`e pensato per funzionare su un internet browser.
+\item Il prodotto \`e sviluppato e testato sui principali internet browsers: Mozilla Firefox, Google Chrome, Opera ed Apple Safari.
 \end{elenconumerato}
-\subsubsezione{Desiderabili (RAD)}
-\begin{elenconumerato}[\textbf{RAD-}]{\subsubsecindent}
-\item{ACF-3 - AJAXDRAW garantisce la compatibilit\`a con il browser Microsoft Internet Explorer, il quale non implementa a pieno HTML 5, tramite la libreria \H{}excanvas\H{} creata da Google.}
-\end{elenconumerato}
+%\subsubsezione{Desiderabili (RAD)}
+%\begin{elenconumerato}[\textbf{RAD-}]{\subsubsecindent}
+%\item{ACF-3 - AJAXDRAW garantisce la compatibilit\`a con il browser Microsoft Internet Explorer, il quale non implementa a pieno HTML 5, tramite la libreria \H{}excanvas\H{} creata da Google.}
+%\end{elenconumerato}
 
 \newpage
-
- \subsezione{Tracciamento Aspettative - Requisiti}
-\begin{table}[h]
-\begin{center}
-     \begin{tabular}
-           {@{\extracolsep{\fill}}|c|c|}
-     \hline
-%%%%%%%%%%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      \textbf{Aspettative} & \textbf{Requisiti} \\
-%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-     \hline
-     ACO-1 & RPO-1 RQO-9 \\
-     \hline
-     \multirow{2}{*}{ACO-2} & RFO-1 RFO-2 RFO-3 RFO-4 RFO-5 RFO-6 RFO-7 \\ & RFO-8 RFO-11 RFO-12 RFO-13 RFO-14 \\
-     \hline
-     ACO-3  & RFO-8  RFO-9 RFO-10 \\
-     \hline
-     ACO-4  & RFO-15 RFO-16 \\
-     \hline
-     ACO-5  & RQO-1 RQO-7 RQO-8 RAO-1 RAO-2 RAO-6 \\
-     \hline
-     ACO-6  & RAO-3 \\
-      \hline
-     ACO-7  & RIO-1 RIO-2 RIO-3 RIO-4 \\
-     \hline
-     ACO-8  & RQO-2 RQO-3 RQO-4 RQO-5 RQO-6 RAO-4 \\
-     \hline
-     ACF-1  & RFO-17 RFO-18 \\
-     \hline
-     ACF-2 & RFD-1 RFD-2 RFF-1 RFF-2 \\
-     \hline
-     ACF-3  & RAD-1 \\
-     \hline
-     ACD-1 & RAO-5 \\
-     
-%%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%
-    \hline %%FINE RIGA
-%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \end{tabular}
-  \caption{Aspettative - Requisiti} %INSERIRE DIDASCALIA - SE NECESSARIA -
-  \label{tab:aspreq}
-  \end{center}
-\end{table}
-
-\newpage
-
- \subsezione{Tracciamento Requisiti - Fonte Associata}
-\begin{table}[h]
-\begin{center}
-     \begin{tabular}
-           {@{\extracolsep{\fill}}|c|c|}
-     \hline
-%%%%%%%%%%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      \textbf{Requisiti} & \textbf{Fonte Associata} \\
-%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      \hline
-     RFO-1 & F01 \\
-     \hline
-     RFO-2 & F01  \\
-     \hline
-     RFO-3 & F01\\
-     \hline
-     RFO-4 & F01 \\
-     \hline
-     RFO-5 & F01 \\
-     \hline
-     RFO-6 & F01 \\
-      \hline
-     RFO-7 & F01 \\
-     \hline
-     RFO-8 & F01 \\
-     \hline
-     RFO-9 &  F01 \\
-     \hline
-     RFO-10 & F01 \\
-     \hline
-     RFO-11 & F01 \\
-     \hline
-     RFO-12 & F01 \\
-     \hline
-     RFO-13 & F01 \\
-     \hline
-     RFO-14 & F01 \\
-     \hline
-     RFO-15 & F01 \\
-     \hline
-     RFO-16 & F01 \\
-     \hline 
-     RFO-17 & F01 \\
-     \hline
-     RFO-18 & F01 \\
-     \hline
-     RFD-1 & F01 \\
-     \hline
-     RFD-2 & F01 \\
-     %%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%
-    \hline %%FINE RIGA
-%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \end{tabular}
-  \caption{Requisiti - Fonte Associata prima parte} %INSERIRE DIDASCALIA - SE NECESSARIA -
-  \label{tab:reqfonte1}
-  \end{center}
-\end{table}
-     
-     
-     
-\newpage
-
-\begin{table}[h]
-\begin{center}
-     \begin{tabular}
-           {@{\extracolsep{\fill}}|c|c|}
-     \hline
-%%%%%%%%%%%%%%INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      \textbf{Requisiti} & \textbf{Fonte Associata} \\
-%%%%%%%%%%%%%%FINE INTESTAZIONE COLONNE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     
-     \hline
-     RFD-3 & F02 \\
-     \hline
-     RFF-1 & F01 \\
-     \hline
-     RFF-2 & F01 \\
-     \hline
-     RFF-3 & F02 \\
-     \hline
-     RPO-1 & F02 \\
-     \hline
-     RQO-1 & F01 \\
-     \hline
-     RQO-2 & F02 \\
-     \hline
-     RQO-3 & F02 \\
-     \hline
-     RQO-4 & F01 \\
-     \hline
-     RQO-5 & F01 \\
-     \hline
-     RQO-6 & F01 \\
-     \hline
-     RQO-7 & F01 \\
-     \hline
-     RQO-8 & F01 \\
-     \hline
-     RQO-9 & F02 \\
-     \hline
-     RIO-1 & F01 \\
-     \hline
-     RIO-2 & F01 \\
-     \hline
-     RIO-3 & F01 \\
-     \hline
-     RIO-4 & F01 \\
-     \hline
-     RAO-1 & F01 \\
-     \hline
-     RAO-2 & F01 \\
-     \hline
-     RAO-3 & F01 \\
-     \hline
-     RAO-4 & F01 \\
-     \hline
-     RAO-5 & F01 \\
-     \hline
-     RAO-6 & F01 \\
-     \hline
-     RAD-1 & F01 \\
-     %%%%%%%%%%% PARTE DA MODIFICARE %%%%%%%%%%%%%%%%
-    \hline %%FINE RIGA
-%%%%%%%%%%% FINE PARTE DA MODIFICARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \end{tabular}
-  \caption{Requisiti - Fonte Associata seconda parte} %INSERIRE DIDASCALIA - SE NECESSARIA -
-  \label{tab:reqfonte2}
-  \end{center}
-\end{table}
-
-\begin{elencopuntato}[\subsecindent]    
-\item[-] \textbf{F01} deriva dal capitolato 
-\item[-] \textbf{F02} deriva dalla ditta ''WebShape''
-\end{elencopuntato}
-
-\newpage
-
- \subsezione{Tracciamento Requisiti - Use Case}
+\subsezione{Tracciamento Requisiti - Use Case}
 \begin{table}[h]
 \begin{center}
      \begin{tabular}
