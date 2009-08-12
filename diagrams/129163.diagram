@@ -1,0 +1,61 @@
+format 58
+
+classcanvas 128011 class_ref 128139 // Cliente
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 62 80 2000
+end
+usecasecanvas 128267 usecase_ref 128011 // UC1.1 Chiama
+  xyzwh 343 97 3005 64 32 label_xy 334 129
+end
+usecasecanvas 128651 usecase_ref 129419 // UC1.3 Inoltra a utente del gruppo corretto
+  xyzwh 305 306 3005 65 32 label_xy 323 346
+end
+classcanvas 129035 class_ref 129291 // Voispeed_Server
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 654 81 2000
+end
+subject 130571 ""
+  xyzwh 144 61 2000 487 426
+classcanvas 130827 class_ref 128011 // Utente_Interno
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 34 379 2000
+end
+usecasecanvas 131083 usecase_ref 129547 // UC1.5 Controlla dati del cliente
+  xyzwh 473 394 3005 64 32 label_xy 425 427
+end
+classcanvas 131339 class_ref 129419 // Database
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 672 378 2000
+end
+usecasecanvas 131595 usecase_ref 129675 // UC1.6 Salva log chiamata
+  xyzwh 512 254 3005 64 32 label_xy 422 291
+end
+usecasecanvas 132107 usecase_ref 131723 // UC1.2 Controlla Tipo chiamata
+  xyzwh 212 234 3005 64 32 label_xy 158 213
+end
+usecasecanvas 132875 usecase_ref 134411 // UC1.4 Fornisci all'utente i dati della chiamata
+  xyzwh 235 395 3005 64 32 label_xy 150 428
+end
+line 128779 --->
+  from ref 128011 z 1999 to ref 128267
+line 129675 --->
+  from ref 128267 z 1999 to ref 129035
+line 131851 --->
+  from ref 131595 z 1999 to ref 131339
+line 131979 --->
+  from ref 129035 z 1999 to ref 131595
+simplerelationcanvas 132491 simplerelation_ref 129931
+  from ref 128651 z 3004 stereotype "<<include>>" xyz 296 257 3000 to ref 132107
+end
+line 132619 --->
+  from ref 131083 z 1999 to ref 131339
+line 132747 --->
+  from ref 129035 z 1999 to ref 128651
+simplerelationcanvas 133003 simplerelation_ref 131723
+  from ref 132875 z 3004 stereotype "<<include>>" xyz 350 409 3000 to ref 131083
+end
+line 133131 --->
+  from ref 132875 z 1999 to ref 130827
+line 133259 --->
+  from ref 128651 z 3004 to ref 132875
+end

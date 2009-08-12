@@ -1,0 +1,14 @@
+window_sizes 1270 721 340 924 527 120
+diagrams
+  usecasediagram_ref 129163 // UC1 Chiamata_in_arrivo
+    924 527 100 4 60 0
+  active  usecasediagram_ref 129291 // UC2 Download_Demo
+    924 527 100 4 0 0
+  usecasediagram_ref 129419 // UC0 Generale
+    924 527 100 4 60 0
+end
+selected usecasediagram_ref 129291 // UC2 Download_Demo
+open
+  usecaseview_ref 128011 // USE CASE
+end
+end

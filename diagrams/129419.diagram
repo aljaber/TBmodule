@@ -1,0 +1,33 @@
+format 58
+
+usecasecanvas 128139 usecase_ref 130187 // UC2 Richiesta Download Demo
+  xyzwh 278 358 3005 64 32 label_xy 224 390
+end
+classcanvas 128267 class_ref 128011 // Utente_Interno
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 51 185 2000
+end
+usecasecanvas 128395 usecase_ref 130315 // UC1 Chiamata in arrivo
+  xyzwh 268 126 3005 64 32 label_xy 252 165
+end
+usecasecanvas 129035 usecase_ref 131851 // UC3 Invia Fax
+  xyzwh 269 203 3005 64 32 label_xy 263 235
+end
+usecasecanvas 129163 usecase_ref 133259 // UC4 Ricevi Fax
+  xyzwh 270 271 3005 64 32 label_xy 260 303
+end
+classcanvas 130827 class_ref 130699 // Utente_Esterno
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 51 340 2000
+end
+subject 131339 ""
+  xyzwh 173 76 2000 266 401
+line 129803 --->
+  from ref 128267 z 1999 to ref 129035
+line 130955 --->
+  from ref 130827 z 1999 to ref 128139
+line 131083 --->
+  from ref 128267 z 1999 to ref 129163
+line 131211 --->
+  from ref 128267 z 1999 to ref 128395
+end

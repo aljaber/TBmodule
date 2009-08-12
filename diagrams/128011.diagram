@@ -1,0 +1,52 @@
+format 58
+
+classcanvas 128011 class_ref 128011 // utente_interno
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 67 144 2000
+end
+classcanvas 128139 class_ref 128139 // cliente_esterno
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 75 239 2000
+end
+subject 128267 ""
+  xyzwh 179 59 2000 434 333
+usecasecanvas 128395 usecase_ref 128011 // chiama
+  xyzwh 338 89 3005 64 32 label_xy 350 121
+end
+classcanvas 128651 class_ref 129291 // voispeed_server
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 619 188 2000
+end
+usecasecanvas 128907 usecase_ref 129163 // inoltra_chiamata
+  xyzwh 349 298 3005 64 32 label_xy 336 330
+end
+usecasecanvas 129291 usecase_ref 129291 // controlla_DB
+  xyzwh 306 198 3005 64 32 label_xy 303 230
+end
+classcanvas 129675 class_ref 128139 // cliente_esterno
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 61 62 2000
+end
+classcanvas 129931 class_ref 128011 // utente_interno
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 75 315 2000
+end
+line 128523 --->
+  from ref 128011 z 1999 to ref 128395
+line 128779 --->
+  from ref 128395 z 1999 to ref 128651
+line 129035 --->
+  from ref 128651 z 1999 to ref 128907
+line 129163 --->
+  from ref 128907 z 1999 to ref 128139
+simplerelationcanvas 129419 simplerelation_ref 128011
+  from ref 128395 z 3004 stereotype "<<include>>" xyz 317 158 3000 to ref 129291
+end
+simplerelationcanvas 129547 simplerelation_ref 128139
+  from ref 128907 z 3004 stereotype "<<include>>" xyz 323 262 3000 to ref 129291
+end
+line 129803 --->
+  from ref 129675 z 1999 to ref 128395
+line 130187 --->
+  from ref 128907 z 1999 to ref 129931
+end

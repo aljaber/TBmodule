@@ -1,0 +1,51 @@
+format 58
+
+usecasecanvas 128139 usecase_ref 129803 // UC2.1 Compila form richiesta demo
+  xyzwh 229 204 3005 64 32 label_xy 157 187
+end
+classcanvas 128267 class_ref 129547 // Server_Tecnobit
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 565 187 2000
+end
+usecasecanvas 128651 usecase_ref 129931 // UC2.5 Inserisci richiesta
+  xyzwh 336 357 3005 64 32 label_xy 303 389
+end
+classcanvas 128779 class_ref 129419 // Database
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 582 339 2000
+end
+usecasecanvas 129163 usecase_ref 130059 // UC2.3 Invio email con link
+  xyzwh 337 100 3005 64 32 label_xy 292 82
+end
+subject 129547 ""
+  xyzwh 150 80 2000 394 344
+usecasecanvas 129675 usecase_ref 131979 // UC2.4 Scarica software
+  xyzwh 337 286 3005 64 32 label_xy 384 319
+end
+usecasecanvas 130571 usecase_ref 132107 // UC2.2 Gestisci la richiesta
+  xyzwh 336 205 3005 64 32 label_xy 379 239
+end
+classcanvas 131851 class_ref 130699 // Utente_Esterno
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 48 188 2005
+end
+line 129035 --->
+  from ref 128651 z 1999 to ref 128779
+simplerelationcanvas 130827 simplerelation_ref 130315
+  from ref 130571 z 3004 stereotype "<<include>>" xyz 377 162 3000 to ref 129163
+end
+line 130955 --->
+  from ref 128139 z 3004 to ref 130571
+simplerelationcanvas 131211 simplerelation_ref 130443
+  from ref 130571 z 3004 stereotype "<<include>>" xyz 291 254 3000 to ref 129675
+end
+simplerelationcanvas 131339 simplerelation_ref 130571
+  from ref 129675 z 3004 stereotype "<<include>>" xyz 292 326 3000 to ref 128651
+end
+line 131467 --->
+  from ref 130571 z 1999 to ref 128267
+line 131595 ----
+  from ref 129163 z 1999 to ref 128267
+line 131979 --->
+  from ref 131851 z 2004 to ref 128139
+end
