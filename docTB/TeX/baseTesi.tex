@@ -14,11 +14,24 @@
 %\usepackage{indentfirst}
 \usepackage{textcomp}
 \usepackage{fancyhdr} %pacchetto per le intestazioni
+\usepackage{listings} %Per inserire codice
+ %Per permettere la colorazione dei caratteri 
 
-
-
-
-
+\lstnewenvironment{php}{\lstset{
+language=PHP,
+basicstyle=\small\ttfamily,
+keywordstyle=\color{blue}\bfseries,
+commentstyle=\color{darkgray},
+numbers=left,
+numberstyle=\tiny,
+tabsize=2,
+stringstyle=\color{black},
+showstringspaces=true,
+morestring=[b][\color{red}]',
+morekeywords={void,int,private,public,protected,var}}}{}
+%per le subsubsection nell'indice e la numerazione
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{4}
 \DeclareGraphicsExtensions{.jpg,.png}
 
 \newcommand{\titolotesi}{GESTIONE DELLA COMUNICAZIONE TRA CLIENTI E OPERATORI COMMERCIALI IN UN SISTEMA CRM}
@@ -36,6 +49,7 @@
 
 \fancyhead[RE]{\slshape \leftmark}
 \fancyfoot[C]{\thepage}
+
 
 
 
