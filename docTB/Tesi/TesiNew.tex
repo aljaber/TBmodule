@@ -1,4 +1,3 @@
- 
 \input{../TeX/baseTesi} %BASE!!!
 \usepackage{multirow}
 \begin{document}
@@ -89,12 +88,13 @@ Prof. Ombretta Gaggi \hspace{144pt} Piero Bizzotto}
 \chapter{Presentazione dello Stage}
 \section{Introduzione}
 Questo documento descrive il lavoro svolto durante la mia attivit\` a di stage presso la ditta Tecnobit S.r.l., sottolineando gli aspetti di interesse e descrivendo in modo pi\`u rapido gli aspetti meramente tecnici. \\
-Sono venuto a conoscenza dello stage durante \textit{Stage-IT}, evento organizzato dall'Universit\` a degli Studi di Padova e dalla Camera di Commercio di Padova, e dopo il colloquio tenuto con il titolare, ho capito subito quanto la mia attivit\`a sarebbe stata utile per la ditta, che altrimenti avrebbe dovuto attendere ancora per l'avviamento del progetto in corso, ed inoltre un sistema informativo basato sul web era per me un argomento di grande interesse. \\
-Tale progetto consiste nella realizzazione di un software web con mansioni di CRM (Customer Relationship Management, letteralmente \"{}gestione della relazione con il cliente\"{}), e gli obiettivi dello stage sono di sfruttare il database riscritto da zero lo scorso anno da altri stagisti per la creazione delle sezioni di gestione interna delle richieste provenienti da potenziali clienti (come downloads di versioni dimostrative, richieste di DVD, ecc.) e l'interfacciamento del sistema con il software VoIP utilizzato dall'azienda per la gestione delle chiamate e dei fax, che non era in precedenza minimamente integrato. Vedremo come tali obiettivi sono stati raggiunti e con quali risultati. 
+Sono venuto a conoscenza dello stage durante \textit{Stage-IT}, evento organizzato dall'Universit\` a degli Studi di Padova e dalla Camera di Commercio di Padova, e dopo il colloquio tenuto con il titolare, ho capito che la mia attivit\`a poteva essere utile all'azienda, che altrimenti avrebbe dovuto attendere ancora per l'avviamento del progetto in corso. 
+Inoltre un sistema informativo basato sul web era per me un argomento di grande interesse. \\
+Tale progetto consiste nella realizzazione di un software web con mansioni di CRM (Customer Relationship Management, letteralmente \"{}gestione della relazione con il cliente\"{}), e gli obiettivi dello stage sono di sfruttare il database riscritto da zero lo scorso anno da altri stagisti per la creazione delle sezioni di gestione interna delle richieste provenienti da potenziali clienti (come downloads di versioni dimostrative, richieste di DVD, ecc.) e l'interfacciamento del sistema con il software VoIP utilizzato dall'azienda per la gestione delle chiamate e dei fax, che non era in precedenza minimamente integrato. Vedremo come tali obiettivi sono stati raggiunti e con quali risultati. \\
 Il primo capitolo introduce il contesto in cui lo stage si \` e svolto, presenta concisamente l'azienda e fornisce le basi necessarie alla comprensione degli obiettivi prefissati. \\
-Il secondo capitolo invece illustra la situazione all'inizio dello stage, i dettagli sull'attuale sistema in uso nell'azienda e il progetto proposto, presentandone tecnologie utilizzate, motivazioni, punti critici, scopi ed aspettative.  \\
-Il terzo racchiude delle spiegazioni generali sullo svolgimento del progetto, riguardanti le varie fasi in cui questo \`e suddiviso, con alcuni appunti ad esempio sul modello di sviluppo adottato e sul database utilizzato.\\
-Il quarto e il quinto contengono entrambi, ognuno per il modulo trattato, un'analisi dei requisiti impliciti ed espliciti ricavata nella prima parte del percorso, con relativi diagrammi dei casi d'uso forniti di descrizione. Inoltre viene presentata in ciascun caso la seconda parte del mio lavoro, nella quale si illustra la realizzazione vera e propria dei componenti analizzati, compresa la progettazione, con i diagrammi delle classi annessi e la descrizione delle funzionalit\`a principali studiate, e lo sviluppo vero e proprio del sistema, con l'illustrazione dei passaggi fondamentali e di screenshot per comprendere meglio le scelte effettuate. \\
+Il secondo capitolo invece illustra la situazione all'inizio dello stage, i dettagli sul sistema attualmente in uso nell'azienda e il progetto proposto, presentando tecnologie utilizzate, motivazioni, punti critici, scopi ed aspettative.  \\
+Il terzo racchiude delle spiegazioni generali sullo svolgimento del progetto, riguardanti le varie fasi in cui questo \`e suddiviso, con alcuni appunti sul modello di sviluppo adottato e sul database utilizzato.\\
+Il quarto e il quinto, ognuno per il modulo trattato, contengono un'analisi dei requisiti impliciti ed espliciti ricavata nella prima parte del percorso, con relativi diagrammi dei casi d'uso forniti di descrizione. Inoltre viene presentata in ciascun caso la seconda parte del mio lavoro, nella quale si illustra la realizzazione vera e propria dei componenti analizzati, compresa la progettazione, con i diagrammi delle classi annessi, la descrizione delle funzionalit\`a principali studiate e lo sviluppo vero e proprio del sistema, con l'illustrazione dei passaggi fondamentali e di screenshots per comprendere meglio le scelte effettuate. \\
 Negli ultimi capitoli saranno presentati i problemi riscontrati durante lo stage e le conclusioni da esso tratte, i risultati ottenuti, le conoscenze utilizzate ed acquisite e alcune considerazioni personali sull'esperienza.
 
 \section{L' Azienda}
@@ -110,9 +110,9 @@ Tecnobit sviluppa una serie di applicazioni volte ad ottimizzare l’attivit\` a
 Il parco software sviluppato e ad oggi regolarmente mantenuto, negli anni \` e diventato vasto e completo, supportato anche dall'assistenza specializzata che la software house fornisce ai propri clienti per la risoluzione dei problemi e per l'aggiornamento dei programmi.
 
 \section{CRM: Customer Relationship Management}
-Il concetto di Customer Relationship Management descrive un insieme di azioni di marketing volte al mantenimento della clientela gi\` a esistente, in un ottica di aumento della soddisfazione dello stesso che porta direttamente ad un aumento della fedelt\` a verso l'azienda.  \\
+Il concetto di Customer Relationship Management descrive un insieme di azioni di marketing volte al mantenimento della clientela gi\` a esistente, in un ottica di aumento della soddisfazione della stessa che porta direttamente ad un aumento della fedelt\` a verso l'azienda.  \\
 Un'impresa che adotta tale strategia non considera unicamente il cliente come unico elemento del mercato, ma anche l'ambiente che lo circonda, cercando di inserirsi in esso per creare rapporti pi\` u duraturi. Il CRM si occupa in particolar modo di trovare nuovi clienti, aumentare i rapporti con i clienti gi\`a  acquisiti e la fidelizzazione di quelli pi\` u promettenti, detti anche \"{}clienti di primo piano\"{}.  \\
-In questa strategia si vanno ad inserire molto bene i software gestionali. Utilizzare programmi specificatamente progettati per la gestione del cliente, avendo riguardo per le strategie orientate alla fidelizzazione, pu\` o supportare e portare grossi vantaggi al CRM, se adeguatamente progettato e sostenuto. Gli strumenti che una azienda pu\` o utilizzare possono essere: 
+In questa strategia si vanno ad inserire molto bene i software gestionali. Utilizzare programmi specificatamente progettati per la gestione del cliente, avendo riguardo alle strategie orientate alla fidelizzazione, pu\` o supportare e portare grossi vantaggi al CRM, se adeguatamente progettato e sostenuto. Gli strumenti che una azienda pu\` o utilizzare possono essere: 
   \begin{itemize}
     \item  knowledge base e F.A.Q. per la risoluzione dei problemi comuni;
     \item  e-mail;
@@ -138,7 +138,7 @@ Data la natura del sistema che, come esposto, copre e supporta gran parte delle 
 
 
 \section{Termini dell'attivit\` a di stage}
-Nei primi incontri con l'azienda, dove \` e stata presentato lo stage e sono stati spiegati gli obiettivi del progetto, \` e stata illustrata la situazione come nel paragrafo precedente. \\
+Nei primi incontri con l'azienda, dove \` e stato presentato lo stage e sono stati spiegati gli obiettivi del progetto, \` e stata illustrata la situazione come nel paragrafo precedente. \\
 A seguito del lavoro di altri stagisti lo scorso anno, i quali hanno gettato le basi per il nuovo sistema informativo costruendone il database sottostante, rivedendo e correggendo l'originale per aumentarne comprensibilit\` a e prestazioni, l'azienda ha strutturato in moduli le varie parti da sviluppare per arrivare al completamento del progetto, tra i quali appunto l'integrazione del centralino VoIP e la gestione delle richieste provenienti da un cliente, che sono stati a me assegnati. \\
 Il primo modulo aveva una priorit\` a minore, ma da un'attenta analisi delle potenzialit\` a del centralino VoIP utilizzato sono emerse funzionalit\` a che avrebbero potuto velocizzare enormemente le operazioni svolte di routine dagli operatori commerciali dell'azienda, consentendo di evitare passaggi macchinosi durante una telefonata ed arrivare pi\` u in fretta a consultare i dati principali del cliente o target (nome con cui viene chiamato un possibile futuro cliente che deve ancora acquistare un prodotto dell'azienda) in quel momento al telefono.\\
 Il secondo modulo risultava particolarmente importante in quanto l'azienda da qualche anno ha iniziato a sfruttare intensamente le rete Internet per l'approvigionamento di nuovi clienti, offrendo la possibilit\` a di richiedere versioni dimostrative dei software sviluppati, intesi sia come download, DVD da inviare, prove online, video, i quali hanno portato ad un numero crescente nel tempo di richieste giornaliere, che sta iniziando a diventare di difficile gestione a causa degli evidenti limiti del sistema attuale. 
@@ -149,15 +149,15 @@ La prima fase dello stage \`e stata in parte dedicata allo studio delle tecnolog
   \item complessit\`a di utilizzo: le tecnologie che richiedevano una apprendimento pi\`u approfondito per la loro 
   complessit\`a di utilizzo hanno ricevuto priorit\`a, bilanciando comunque le scelte anche secondo i bisogni stessi del
 progetto da sviluppare, individuandone le funzionalit\`a necessarie;
-  \item possibilit\`a di riuso del codice, per cercare di sfruttare le parti ben strutturate del vecchio sistema e adattarle se possibile al nuovo;
-  \item efficienza, in quanto questo \'e l'obiettivo cardine nello sviluppo del nuovo sistema informativo.
+  \item possibilit\`a di riuso del codice, per cercare di sfruttare le parti ben strutturate del vecchio sistema e adattarle, se possibile, al nuovo;
+  \item efficienza, in quanto questo \`e l'obiettivo cardine nello sviluppo del nuovo sistema informativo.
 \end{itemize}
 \noindent
 Le scelte quindi, in base a questi criteri, sono cadute sulle tecnologie descritte nei paragrafi successivi.
 
 \subsection{PHP, Apache e MySQL}
 \textbf{PHP} \`e un linguaggio di scripting interpretato originariamente concepito per la realizzazione di pagine web dinamiche. \\
-Attualmente \`e utilizzato principalmente per sviluppare applicazioni web lato server ma pu\`o essere usato anche per scrivere script a linea di comando o applicazioni standalone con interfaccia grafica. Riprende per molti versi la sintassi del C, come peraltro fanno molti linguaggi moderni, e del Perl. \`E fondamentalmente un linguaggio di alto livello, caratteristica questa rafforzata dall'esistenza delle sue moltissime API, oltre 3000 funzioni del nucleo base. \\
+Attualmente \`e utilizzato principalmente per sviluppare applicazioni web lato server ma pu\`o essere usato anche per scrivere script a linea di comando o applicazioni stand-alone con interfaccia grafica. Riprende per molti versi la sintassi del C, come peraltro fanno molti linguaggi moderni, e del Perl. \`E fondamentalmente un linguaggio di alto livello, caratteristica questa rafforzata dall'esistenza delle sue moltissime \hyperlink{api}{\underline{API}}, oltre 3000 funzioni del nucleo base. \\
 Fornisce un'API specifica per interagire con \textbf{Apache}, nonostante funzioni naturalmente con numerosi server web.\\
 \`E anche ottimamente integrato con il database \textbf{MySQL}, un database management system (\hyperlink{dbms}{\underline{DMBS}}) relazionale, per il quale possiede pi\`u di una API. \\
 Per questo motivo esiste un'enorme quantit\`a di script e librerie in PHP, disponibili liberamente su Internet. Dispone di un archivio chiamato PEAR (PHP Extension and Application Repository), che mette a disposizione un \hyperlink{framework}{\underline{framework}} di librerie riusabili per lo sviluppo di applicazioni PHP e di PECL (The PHP Extension Community Library), che raccoglie tutte le estensioni conosciute scritte in C. \\
@@ -175,10 +175,10 @@ Tra questi vi sono un'ottima gestione delle sessioni, interazione con il databas
 
 \newpage
 \section{Formazione e Studio di fattibilit\` a}
-La prima e consistente parte dello stage \`e iniziata con una breve fase di formazione guidata per prendere conoscenza del sistema informativo in uso e dei fondamentali processi aziendali. In particolare \'e stato messo l'accento sulle attivit\`a degli operatori commerciali, mostrandomi le varie fasi del loro lavoro, dall'acquisizione di un potenziale cliente fino alla sperabile vendita di uno o pi\'u prodotti, con tutti i passaggi intermedi. \\
-Questo studio \`e stato eseguito con lo scopo di raccogliere pi\`u informazioni possibili per poter ideare un sistema che fosse il pi\`u possibile vicino ai bisogni dell'azienda con un occhio di riguardo verso modificabilit\'a e manutenibilit\'a, cosicch\'e chi dovr\`a successivamente correggere o estendere il modulo sviluppato si trovi nelle condizioni ideali per farlo. \\
+La prima e consistente parte dello stage \`e iniziata con una breve fase di formazione guidata per prendere conoscenza del sistema informativo in uso e dei fondamentali processi aziendali. In particolare \`e stato messo l'accento sulle attivit\`a degli operatori commerciali, ossia sulle varie fasi del loro lavoro, dall'acquisizione di un potenziale cliente fino alla sperabile vendita di uno o pi\`u prodotti, con tutti i passaggi intermedi. \\
+Questo studio \`e stato eseguito con lo scopo di raccogliere pi\`u informazioni possibili per poter ideare un sistema che fosse il pi\`u possibile vicino ai bisogni dell'azienda con un occhio di riguardo verso modificabilit\`a e manutenibilit\`a, cosicch\`e chi dovr\`a successivamente correggere o estendere il modulo sviluppato si trovi nelle condizioni ideali per farlo. \\
 Questa prima parte di formazione dunque ha permesso una comprensione del lavoro che si sarebbe dovuto andare a realizzare. Durante tali incontri c'\`e stata la possibilit\`a di dialogare con i rappresentanti delle aree di interesse dell'azienda, cos\`i da poter raccogliere informazioni, suggerimenti, richieste e lamentele riguardanti ogni aspetto che il sistema informativo avrebbe dovuto coprire. \\
-L'esperienza accumulata durante questa fase ha portato ad una visione di insieme del progetto, che verr\`a rappresentata con la realizzazione di documenti che rappresentaranno quanto visto, eliminando le informazioni sovrabbondanti non riguardanti le fasi preliminari dello sviluppo. \\
+L'esperienza accumulata durante questa fase ha portato ad una visione d'insieme del progetto, che verr\`a rappresentata con la realizzazione di documenti che illustreranno quanto visto, eliminando le informazioni sovrabbondanti non riguardanti le fasi preliminari dello sviluppo. \\
 Un notevole supporto all'apprendimento della logica del sistema \`e venuto dalla gentile concessione dell'azienda, che ha permesso di effettuare una copia completa di tutti i codici sorgenti delle pagine PHP dell'applicazione, comprese anche alcune pagine del sito internet, in particolare quelle riguardanti i vari prodotti e il loro download, l'accesso in sola lettura al database (per non rischiare di comprometterne i dati) su cui tale applicazione si appoggia, e tutto il necessario per l'interfacciamento con il server Voispeed, per poter fare le dovute prove. \\
 Il modulo assegnato, come tutti quelli previsti, doveva basarsi su un nuovo database sviluppato da due stagisti lo scorso anno, che effettuarono lo studio approfondito del vecchio sistema informativo ragionando sulla possibilit\`a di ristrutturazione del vecchio impianto, giungendo per\`o alla conclusione che l'unica alternativa percorribile era il completo rifacimento del tutto, per garantire maggiore flessibilit\`a. \\
 La scelta di riscrivere il sistema ex novo comunque non avrebbe precluso la possibilit\`a di riutilizzare le porzioni di codice meglio realizzate: in particolare erano presenti numerose funzioni di recente implementazione che presentavano una buona qualit\`a del codice. Tali funzioni eseguivano operazioni complesse e meccaniche come la generazione delle fatture aderendo a strette regole di impaginazione o l'interfaccia del sistema con altri sistemi esterni che hanno necessit\`a di prelevare dati dal database. \\
@@ -188,14 +188,14 @@ Riutilizzando parte del codice preesistente e adattandolo al nuovo sistema sareb
 \chapter{Svolgimento del Progetto}
 
 \section{Il modello di sviluppo}
-La necessit\`a di rendere il sistema estendibile e manutenibile ha richiesto l'adozione di un framework di sviluppo come CodeIgniter, il quale come detto si basa sul pattern architetturale MVC (Model-View-Controller) che ha come scopo quello di isolare la logica di business dell'applicazione dalla sua interfaccia con l'utente.\\
+La necessit\`a di rendere il sistema estendibile e manutenibile ha richiesto l'adozione di un framework di sviluppo come CodeIgniter il quale, come detto, si basa sul pattern architetturale MVC (Model-View-Controller) che ha come scopo quello di isolare la logica di business dell'applicazione dalla sua interfaccia con l'utente.\\
 Questa separazione rende molto pi\`u semplice la modifica della visualizzazione grafica o della logica sottostante senza dover adattare anche il resto dell'applicazione. In MVC, il model rappresenta l'informazione e le regole necessarie per manipolarla; la view corrisponde agli elementi dell'interfaccia utente che hanno il compito di presentare una certa visione dei dati; il controller gestisce gli eventi provenienti dall'utente ed eventualmente effettua opportune azioni sul model. \\
-Nel caso di CodeIgniter, il controller si presenta come un una classe che contiene determinati metodi, ognuno rappresentante nella pratica una pagina. Questo controller nel suo costruttore si occupa di caricare tutti i models creati (loro stessi delle classi), tramite degli appositi costrutti del framework, per poi usarli nelle varie funzioni come qualsiasi istanze. Le views vengono caricate sempre tramite un funzione predefinita, con la possibilit\`a di passare loro i dati desiderati, siano essi le stesse istanze dei models, oppure altre variabili create nella funzione del controller.  \\
+Nel caso di CodeIgniter, il controller si presenta come una classe che contiene determinati metodi, ognuno rappresentante nella pratica una pagina. Questo controller nel suo costruttore si occupa di caricare tutti i models creati (loro stessi delle classi), tramite degli appositi costrutti del framework, per poi usarli nelle varie funzioni come qualsiasi istanze. Le views vengono caricate sempre tramite una funzione predefinita, con la possibilit\`a di passare loro i dati desiderati, siano essi le stesse istanze dei models, oppure altre variabili create nella funzione del controller.  \\
 Tutta questa interazione porta al notevole vantaggio dell'indipendenza tra le parti: essendo infatti proprio il controller a gestire gli eventi, e i vari model a contenere ad esempio i metodi di recupero dati dal database, diventa possibile fare una modifica anche complessa, senza influire mimimamente sul resto del sistema: si pu\`o avere una view che all'interno richiama i medesimi metodi, i quali per\`o in realt\`a possono essere stati completamente modificati dallo sviluppatore, ad esempio per guadagnare efficienza, o raccogliere una maggiore quantit\`a di dati da un'interrogazione del database.
 
 \newpage
 \subsection{Il Database}
-Le prima azione da eseguire consisteva nella lieve ristrutturazione delle tabelle del database creato appositamente lo scorso anno. Essendo stata fatta una progettazione il pi\`u generale possibile, si \`e visto subito che alcune tabelle specifiche per i moduli da sviluppare erano assenti, come ad esempio \textit{clienti\_tel}, che associa ad un cliente pi\`u numeri di telefono, oppure \textit{utenti\_interni\_tutele}, che invece contiene i dati sulle tutele dei clienti da parte degli operatori commerciali. \\
+Le prima azione da eseguire consisteva nella lieve ristrutturazione delle tabelle del database creato appositamente lo scorso anno. Essendo stata fatta una progettazione il pi\`u generale possibile, si \`e visto immediatamente che alcune tabelle specifiche per i moduli da sviluppare erano assenti, come ad esempio \textit{clienti\_tel}, che associa ad un cliente pi\`u numeri di telefono, oppure \textit{utenti\_interni\_tutele}, che invece contiene i dati sulle tutele dei clienti da parte degli operatori commerciali. \\
 Un primo passo obbligato \`e stato quindi quello di integrare con le nuove tabelle il database, in modo da predisporlo allo sviluppo.
 
 \begin{figure}[!ht]
@@ -207,8 +207,8 @@ Un primo passo obbligato \`e stato quindi quello di integrare con le nuove tabel
 
 \noindent
 Per rappresentare il \"{}frammento\"{} di database impiegato per i moduli, \`e stato usato un diagramma EER, ottenuto mediante il software gratuito MySQL Workbench. \\
-Il nuovo database, come citato in precedenza, era gi\`a pronto all'uso, ma molto generico e incompleto, per cui \`e stata necessaria una valutazione approfondita su quali carenze esso presentava, in modo da poterlo integrare con i dati mancanti ottenuti in seguito all'analisi. \\
-La figura \ref{EER} mostra tutte le tabelle utilizzate poi nello sviluppo di entrambi i moduli, comprese quelle accessorie, in modo da comprendere in modo ottimale il modo in cui si \`e lavorato successivamente nello sviluppo delle componenti, e il collegamento con il database sottostante. \\
+Il nuovo database, come citato in precedenza, era gi\`a pronto all'uso, ma molto generico e incompleto, per cui \`e stata necessaria una valutazione approfondita delle carenze che esso presentava, in modo da poterlo integrare con i dati mancanti ottenuti in seguito all'analisi. \\
+La figura \ref{EER} mostra tutte le tabelle utilizzate poi nello sviluppo di entrambi i moduli, comprese quelle accessorie, in modo da comprendere in maniera ottimale le modalit\`a con cui si \`e lavorato successivamente nello sviluppo delle componenti, e il collegamento con il database sottostante. \\
 Le entit\`a che sono risultate evidenti come fulcro dei moduli sviluppati, attorno a cui ruotava la funzione delle altre entit\`a, sono state:
 \begin{itemize}
   \item clienti;
@@ -224,7 +224,7 @@ L'integrazione dei dati delle varie tabelle utilizzate \`e stata fatta tramite d
 
 \newpage
 \section{Analisi dei Requisiti}
-La maggior parte dei requisiti sono stati raccolti in una serie di incontri con il dott. Marco Rossi e il dott. Gianni Rossi, rispettivamente responsabile commerciale e titolare dell'azienda, nei quali mi sono stati esposti i principali componenti del vecchio sistema informativo, e i desideri rispetto al nuovo, compresi i moduli in cui questo \`e stato suddiviso. \\
+La maggior parte dei requisiti sono stati raccolti in una serie di incontri con il dott. Marco Rossi e il dott. Gianni Rossi, rispettivamente responsabile commerciale e titolare dell'azienda, nei quali sono stati esposti i principali componenti del vecchio sistema informativo, e i desideri rispetto al nuovo, compresi i moduli in cui questo lavoro \`e stato suddiviso. \\
 Il diagramma di figura \ref{UC0} mostra una semplice vista dei moduli principali in cui \`e stato organizzato lo studio inziale, trattati concisamente nei successivi capitoli.
 
 \begin{figure}[!ht]
@@ -236,8 +236,8 @@ Il diagramma di figura \ref{UC0} mostra una semplice vista dei moduli principali
 
 \newpage
 \section{Progettazione e sviluppo}
-Analizzati i requisiti dei moduli si \`e deciso di procedere quindi con la progettazione e lo sviluppo. In questi c'\`e stata la possibilit\`a di valutare la qualit\`a dell'analisi, gi\`a verificata con l'azienda, e di fornire un solido punto di partenza su cui ciascun modulo avrebbe potuto appoggiarsi in modo indipendente dagli altri che saranno sviluppati da altri stagisti. \\
-Infatti, essendo l'obiettivo primario del rifacimento dell'intero sistema informativo la migliore efficienza, risulta conseguentemente anche la componente di maggior delicatezza ed interesse, che quindi necessita di pi\`u tempo per poter raggiungere una forma stabile. \\
+Analizzati i requisiti dei moduli si \`e deciso di procedere quindi con la progettazione e lo sviluppo. In questi c'\`e stata la possibilit\`a di valutare la qualit\`a dell'analisi, gi\`a verificata con l'azienda, e di fornire un solido punto di partenza su cui ciascun modulo avrebbe potuto poggiare in modo indipendente dagli altri che sarebbero stati sviluppati da diversi stagisti. \\
+Infatti, essendo l'obiettivo primario del rifacimento dell'intero sistema informativo la migliore efficienza, risultava conseguentemente anche la componente di maggior delicatezza ed interesse, che quindi necessitava di pi\`u tempo per poter raggiungere una forma stabile. \\
 Inoltre lavorare alla progettazione dei moduli seguendo l'analisi appena svolta, avrebbe permesso di valutare se i requisiti identificati fossero sufficientemente esaustivi o se invece alcuni aspetti fossero stati omessi in sede di analisi. \\
 Nei prossimi due capitoli verrano illustrati dettagliatamente tutti i passaggi che hanno portato alla conclusione dell'attivit\`a di stage, un modulo alla volta, attraversando per ognuno tutte le fasi dall'analisi alla codifica.
 
@@ -254,9 +254,9 @@ Nei prossimi due capitoli verrano illustrati dettagliatamente tutti i passaggi c
 \section{Analisi dei Requisiti}
 
 Lo scopo principale del modulo VoIP e Fax \`e di permettere l'interazione dell'utente aziendale con il sistema informativo per gestire tutte le operazioni effettuate di prassi durante il proprio lavoro di rapporto e comunicazione con il cliente. Non richiede funzionalit\`a complesse, se non una semplice visualizzazione comoda e intuitiva dei dati del cliente chiamante o chiamato, per velocizzare tutte le operazioni da eseguire per un operatore commerciale. \\
-Inizialmente con il committente si \`e discusso sulla possibilit\'a di adozione di un nuovo software PBX, analizzando in particolare le soluzioni open source basate sulla piattaforma Asterisk, molto flessibili ed economiche. Nonostante le funzionalit\'a aggiuntive e le promesse di risparmio, una scelta cos\'i forte sarebbe stata molto complicata da effettuare, in quanto i benefici sarebbero stati minimi se confrontati con gli svantaggi che sarebbero sopravvenuti, in particolare per gli operatori che avrebbero dovuto cambiare repentinamente le loro abitudini. \\
-Si \`e quindi giunti alla conclusione che fosse meglio studiare pi\'u a fondo le possibilit\'a proposte da Voispeed, che sono risultate sufficienti per ottenere i risultati prefissati. Nella fase di analisi dei requisiti ho potuto accedere al gestionale in uso presso la ditta, in aggiunta alla possibilit\`a di collegarmi al centralino VoIP, tramite i quali ho potuto analizzare quali dati avessero bisogno di essere gestiti dal modulo in procinto di essere sviluppato. \\
-Inoltre tramite alcune interviste con alcuni dipendenti ho constatato di quali strumenti avessero bisogno per migliorare l'efficienza nel loro lavoro. Ed \`e proprio da queste interviste che sono emersi i requisiti principali di questo modulo, in quanto l'interazione dell'applicativo VOIce Client doveva essere plasmata secondo le necessit\`a di questi utenti. In seguito andr\`o ad analizzare le 3 sezioni in cui \'e suddiviso il modulo.
+Inizialmente con il committente si \`e discusso sulla possibilit\`a di adozione di un nuovo software PBX, analizzando in particolare le soluzioni open source basate sulla piattaforma Asterisk, molto flessibili ed economiche. Nonostante le funzionalit\`a aggiuntive e le promesse di risparmio, una scelta cos\`i forte sarebbe stata molto complicata da effettuare, in quanto i benefici sarebbero stati minimi se confrontati con gli svantaggi che sarebbero sopravvenuti, in particolare per gli operatori che avrebbero dovuto cambiare repentinamente le loro abitudini. \\
+Si \`e quindi giunti alla conclusione che fosse meglio studiare pi\`u a fondo le possibilit\`a proposte da Voispeed, che sono risultate sufficienti per ottenere i risultati prefissati. Nella fase di analisi dei requisiti \`e stato garantito l'accesso al gestionale in uso presso la ditta, in aggiunta alla possibilit\`a di collegarsi al centralino VoIP, tramite i quali si \`e potuto analizzare quali dati avessero bisogno di essere gestiti dal modulo in procinto di essere sviluppato. \\
+Inoltre tramite alcune interviste con alcuni dipendenti, sono stati esaminati gli strumenti di cui avessero bisogno per migliorare l'efficienza nel loro lavoro. Ed \`e proprio da queste interviste che sono emersi i requisiti principali di questo modulo, in quanto l'interazione dell'applicativo VOIce Client doveva essere plasmata secondo le necessit\`a di questi utenti. In seguito si andranno ad analizzare le 3 sezioni in cui \`e suddiviso il modulo.
 
 \newpage
 \subsection{Integrazione Centralino VoIP}
@@ -267,14 +267,14 @@ Inoltre tramite alcune interviste con alcuni dipendenti ho constatato di quali s
 \end{figure}
 
 \noindent
-Le azioni della prima delle sezioni trattate sopra descritte servono ad illustrare i processi che avvengono al seguito dell'arrivo di una telefonata da parte di un cliente che intenda parlare con il reparto commerciale dell'azienda o con l'assistenza tecnica. \\
+Le azioni della prima delle sezioni trattate sopra descritte servono ad illustrare i processi che avvengono in seguito all'arrivo di una telefonata da parte di un cliente che intenda parlare con il reparto commerciale dell'azienda o con l'assistenza tecnica. \\
 In precedenza, per qualsiasi utente, l'unica informazione reperibile in questa fase era l'identit\`a del cliente o target chiamante, nel caso questo fosse registrato nel database aziendale, trovata utilizzando come parametro ovviamente il numero di telefono del chiamante. \\
-Dalle interviste effettuate, \`e emerso un bisogno generale di snellire tutte le operazioni che un commerciale era portato ad eseguire una volta ricevuta una telefonata, che principalmente erano raccogliere i dati del cliente chiamante dal sistema informativo tramite ricerca del nominativo, atto che portava per\'o ad uno spreco di tempo all'inizio della telefonata che in qualche caso poteva infastidire il cliente. \\
-La necessit\'a primaria diventava quindi poter ottenere pi\'u informazioni possibili all'arrivo di una chiamata, e di poter accedere immediatamente alla scheda del cliente con tutti i dati inseriti nel database.\\
+Dalle interviste effettuate, \`e emerso un bisogno generale di snellire tutte le operazioni che un commerciale era portato ad eseguire una volta ricevuta una telefonata, che principalmente erano raccogliere i dati del cliente chiamante dal sistema informativo tramite ricerca del nominativo, atto che portava per\`o ad uno spreco di tempo all'inizio della telefonata che in qualche caso poteva infastidire il cliente. \\
+La necessit\`a primaria diventava quindi poter ottenere pi\`u informazioni possibili all'arrivo di una chiamata, e di poter accedere immediatamente alla scheda del cliente con tutti i dati inseriti nel database.\\
 Inoltre altro bisogno indispensabile risultava l'automatizzazione della procedura di inoltro di una telefonata al commerciale tutelante del cliente chiamante, cosa che avveniva in modo del tutto privo di regole con situazioni paradossali all'interno degli uffici, come richieste a voce ai vicini di scrivania per stabilire a chi spettasse la telefonata.
 
 \subsection{Invio Fax}
-Il client VOIce integra una funzionalit\`a per l'invio dei fax, consentita per\'o solamente ad alcuni utenti abilitati dall'amministratore. Necessit\`a degli utenti \'e di poter visualizzare l'elenco dei fax da loro inviati tramite un'apposita schermata del sistema informativo, in modo da avere a disposizione uno storico delle loro operazioni di invio.
+Il client VOIce integra una funzionalit\`a per l'invio dei fax, consentita per\`o solamente ad alcuni utenti abilitati dall'amministratore. Necessit\`a degli utenti \`e di poter visualizzare l'elenco dei fax da loro inviati tramite un'apposita schermata del sistema informativo, in modo da avere a disposizione uno storico delle loro operazioni di invio.
 
 \subsection{Ricezione Fax}
 L'amministratore del sistema o chi abbia i permessi adeguati devono poter consultare i fax arrivati in azienda tramite apposita pagina del sistema informativo, e poterli assegnare al cliente corretto registrato nel database, non senza qualche nota a margine in caso di necessit\`a. Se il fax arrivato riguarda un particolare commerciale, questo deve poter essere informato tramite un'apposita funzione, in modo che questi possa leggerlo a sua volta.
@@ -349,8 +349,8 @@ Il centralino VoIP salva nel database una traccia della telefonata avvenuta.
 \item Per gli operatori del Servizio Assistenza, il sistema deve fornire all'arrivo della chiamata tutti i dati riguardanti i software posseduti dal cliente chiamante e la loro copertura assistenziale.
 \item Il sistema deve registrare i dati principali di una telefonata avvenuta come durata, numeri di telefono, data e ora di inizio e di fine. 
 \item Il sistema deve permettere la consultazioni di tali tabulati, fornendo dei filtri per data e per utente interno. 
-\item Il sistema deve permettere l'inserimento di un contatto telefonico solo se la telefonata relativa \'e effettivamente avvenuta.
-\item Il sistema deve consentire ad un utente, che ha la possibilit\'a di inviare un fax, di visionarne l'elenco totale, tramite un \hyperlink{report}{\underline{report}} con gli appositi filtri applicati.
+\item Il sistema deve permettere l'inserimento di un contatto telefonico solo se la telefonata relativa \`e effettivamente avvenuta.
+\item Il sistema deve consentire ad un utente, che ha la possibilit\`a di inviare un fax, di visionarne l'elenco totale, tramite un \hyperlink{report}{\underline{report}} con gli appositi filtri applicati.
 \item Il sistema deve permettere ad un amministratore di visualizzare i dati dei fax in arrivo e di poterli collegare al cliente corretto, con le dovute annotazioni opzionali. 
 \item Un amministratore deve poter inoltrare un fax ricevuto all'operatore che sta seguendo la trattativa con quel cliente.
 \item Il sistema deve fornire la possibilit\`a di visualizzare l'immagine del fax desiderato tramite la pressione di un unico pulsante.
@@ -360,7 +360,7 @@ Il centralino VoIP salva nel database una traccia della telefonata avvenuta.
 \begin{itemize}
 \item Il codice scritto deve seguire le linee guida stabilite dagli stessi creatori di CodeIgniter \cite{cistyle}.
 \item Il codice scritto deve basarsi sul pattern MVC.
-\item Il codice xHTML e \hyperlink{css}{\underline{CSS}} devono essere validati dagli strumenti forniti dal \hyperlink{w3c}{\underline{W3C}} \cite{due}.
+\item I codici xHTML e \hyperlink{css}{\underline{CSS}} devono essere validati dagli strumenti forniti dal \hyperlink{w3c}{\underline{W3C}} \cite{due}.
 \item Il sistema deve garantire agli utilizzatori delle prestazioni accettabili.
 \end{itemize}
 
@@ -373,7 +373,7 @@ Il centralino VoIP salva nel database una traccia della telefonata avvenuta.
 	  \item Utilizzo del software Voispeed per la gestione delle telefonate.
 	  \item Il sistema informativo deve poter essere utilizzato con tutti i browser in circolazione attualmente.
 	  \item Il sistema deve essere facile da utilizzare: tutte le funzionalit\`a devono essere disponibili all’utente, attraverso una comoda interfaccia grafica (pulsanti, caselle per l’input degli utenti, combobox, checkbox, ecc).
-	  \item Il sistema informativo deve permettere all’utente di visualizzare in maniera facile veloce i dati di maggior interesse, mettendo a disposizione filtri e viste di vario genere, come i report dei fax e del registro delle chiamate.
+	  \item Il sistema informativo deve permettere all’utente di visualizzare in maniera facile e veloce i dati di maggior interesse, mettendo a disposizione filtri e viste di vario genere, come i report dei fax e del registro delle chiamate.
 \end{itemize}
 
 \newpage
@@ -387,11 +387,11 @@ Il centralino VoIP salva nel database una traccia della telefonata avvenuta.
 \end{figure}
 
 \noindent
-Innanzitutto, dalla figura \ref{voip} si pu\`o notare come il fulcro del primo modulo sia sicuramente la \textit{Chiamata}, modello che contiene tutte le operazioni riguardanti una generica telefonata (in entrata o in uscita), come il salvataggio dei dati della chiamata in un apposito registro. Il controller ha il compito di raccogliere i dati di questa chiamata (per la maggior parte dall'integrazione con Voispeed) ed utilizzarli per chiamare le viste dedicate, a seconda dell'evento verificatosi(arrivo di una chiamata, oppure terminazione della stessa). \\
+Innanzitutto, dalla figura \ref{voip} si pu\`o notare come il fulcro del primo modulo sia sicuramente la \textit{Chiamata}, modello che contiene tutte le operazioni riguardanti una generica telefonata (in entrata o in uscita), come il salvataggio dei dati della chiamata in un apposito registro. Il controller ha il compito di raccogliere i dati di questa chiamata (per la maggior parte dall'integrazione con Voispeed) ed utilizzarli per chiamare le viste dedicate, a seconda dell'evento verificatosi (arrivo di una chiamata, oppure terminazione della stessa). \\
 Le classi \textit{Cliente} ed \textit{Utente\_interno}, allo stesso modo, vengono istanziate dal controller ad ogni chiamata, e contengono i dati principali dell'utente interno e del cliente coinvolti nella telefonata, raccogliendone i dettagli dal database, come ad esempio il nome del proprio sostituto nel caso di un operatore commerciale, oppure le informazioni sulla tutela di un cliente e i prodotti per cui quest'ultimo abbia assistenza tecnica garantita. \\
-\textit{SoftwareProdotto} si occupa proprio della raccolta di questi dettagli, sfruttando le funzioni sviluppate da un'altro stagista, a cui era stato assegnato il modulo sulla gestione di un sistema per il supporto tecnico online. In particolare, l'istanza di tale classe permette di accedere ai dati di un cliente riguardanti prodotti ancora in assistenza, come nome, versione e giorni di assistenza mancanti, in modo da velocizzare le operazioni svolte dai tecnici, che all'arrivo di una chiamata riescono a conoscere in anticipo il contesto sul quale essa si baser\`a, conoscendo i prodotti posseduti dal cliente. \\
+\textit{SoftwareProdotto} si occupa proprio della raccolta di questi dettagli, sfruttando le funzioni sviluppate da un altro stagista, a cui era stato assegnato il modulo sulla gestione di un sistema per il supporto tecnico online. In particolare, l'istanza di tale classe permette di accedere ai dati di un cliente riguardanti prodotti ancora in assistenza, come nome, versione e giorni di assistenza mancanti, in modo da velocizzare le operazioni svolte dai tecnici, che all'arrivo di una chiamata riescono a conoscere in anticipo il contesto sul quale essa si baser\`a, conoscendo i prodotti posseduti dal cliente. \\
 La classe \textit{Software} cerca di astrarre le operazioni svolte dal client VoIP in modo da permettere una futura adozione, rapida e  indolore, di un nuovo software di questo tipo, raggruppando in metodi le normali azioni come l'accettazione, l'inoltro o il rifiuto di una chiamata. Questo comunque gi\`a dalle prime considerazioni fatte era apparso di difficile attuazione, a causa soprattutto della diversit\`a tra le API dei software, che nella maggior parte dei casi offrono funzionalit\`a magari simili tra loro ma implementate in modo molto diverso. \\
-La parte riguardante il registro delle chiamate non verr\`a illustrata con un diagramma, in quanto troppo semplicistica visto che le operazioni contenute nel modello riguardano solamente la visualizzazione di un report con lista delle telefonate avvenute tra un utente e i clienti nel tempo.\\
+La parte riguardante il registro delle chiamate non verr\`a illustrata con un diagramma, in quanto troppo semplicistica visto che le operazioni contenute nel modello riguardano solamente la visualizzazione di un report con la lista delle telefonate avvenute tra un utente e i clienti nel tempo.\\
 Segue ora una descrizione dei metodi pi\`u interessanti riguardanti il model implementato.
 Per la chiamata:
 \begin{description}
@@ -472,7 +472,7 @@ Ad esempio, come mostrato nella figura \ref{chiamata_comm}, ad una chiamata in a
 \noindent
 Come si pu\`o vedere, il sistema informativo controlla nel database se il numero di telefono chiamante \`e collegato ad un cliente, fornendone i dati utili all'operatore a cui arriva la telefonata, nel caso siano presenti. In particolare, oltre al nome e la qualifica del cliente, viene mostrato anche il nome dell'operatore commerciale che, nel periodo corrente, detiene la tutela esclusiva sul cliente in questione. \\
 Questa informazione \`e sicuramente la novit\`a principale che riguarda questa parte, in quanto in precedenza ad ogni telefonata si creava una certa confusione per trovare questo dato, dovendo effettuare ogni volta una ricerca manuale nel (lento) sistema informativo per trovare chi, se presente, avesse il diritto alla tutela, e girare a questa persona la telefonata. \\
-Questo problema viene ora superato fornendo a chi risponde tutte le scorciatoie necessarie ad effettuare questa procedura in modo semi-automatico, guidando l'utente passo passo (tramite l'utilizzo di alcune funzionalit\`a del framework \hyperlink{javascript}{\underline{javascript}} jQuery \cite{jquery}. \\
+Questo problema viene ora superato fornendo a chi risponde tutte le scorciatoie necessarie ad effettuare questa procedura in modo semi-automatico, guidando l'utente passo passo (tramite l'utilizzo di alcune funzionalit\`a del framework \hyperlink{javascript}{\underline{javascript}} jQuery \cite{jquery}). \\
 Il diagramma della figura \ref{act_call} mostra quale sia il flusso della funzione \textit{chiama}() presente nel classe controller per la gestione delle chiamate. 
 
 \begin{figure}[!ht]
@@ -487,7 +487,7 @@ Questo flusso analizza quindi gli eventi successivi all'arrivo e accettazione di
 \begin{itemize}
  \item nuovo (e quindi con la possibilit\`a di trattare liberamente);
  \item presente nel database ma al momento fuori tutela (quindi si pu\`o procedere come sopra);
- \item gi\`a tutelato da un'altro operatore: il sistema fornisce l'identit\`a dell'agente corretto a cui inoltrare la chiamata.
+ \item gi\`a tutelato da un altro operatore: il sistema fornisce l'identit\`a dell'agente corretto a cui inoltrare la chiamata.
 \end{itemize}
 \noindent
 A questo punto, al seguito dell'accettazione della telefonata, all'utente vengono fornite una serie di funzionalit\`a atte a permettere l'inoltro della telefonata all'operatore che possiede l'esclusiva sul cliente, tramite dei pulsanti presentati in modo molto semplicistico: nel caso questi sia occupato o assente, subito il sistema fornisce dinamicamente le opzioni per la chiamata di un sostituto, segnalato appunto se necessario. \\
@@ -501,7 +501,7 @@ In caso nemmeno questo sia raggiungibile, l'utente riattiva la chiamata con il c
 \end{figure}
 
 \noindent
-Nella fattispecie, nell'istante rappresentato l'utente ha provato ad inoltrare la chiamata, e il sistema gli propone le varie possibilit\`a selezionabili. Il tutto \`e reso dinamico grazie all'utilizzo di jQuery, e in particolare i metodi \textit{slideDown}() e \textit{slideUp}() che offre, per far apparire e scomparire i pulsanti in sequenza. Qui di seguito ecco un esempio di codice utilizzato:
+Nella fattispecie, nell'istante rappresentato l'utente ha provato ad inoltrare la chiamata, e il sistema gli propone le varie possibilit\`a selezionabili. Il tutto \`e reso dinamico grazie all'utilizzo di jQuery, e in particolare i metodi \textit{slideDown}() e \textit{slideUp}() che offre, per far apparire e scomparire i pulsanti in sequenza. Qui di seguito ecco un esempio di codice utilizzato,
 
 
 \begin{verbatim}
@@ -514,9 +514,9 @@ Nella fattispecie, nell'istante rappresentato l'utente ha provato ad inoltrare l
 \end{verbatim}               
 
 \noindent
-che fa apparire e scomparire con un effetto di scorrimento i quattro elementi contenuti al click del mouse sull'elemento \"{}attesa\"{} (identificato dall'icona con i tre telefoni collegati di figura \ref{forward_call}). \\
+che fa apparire e sparire, con un effetto di scorrimento rispettivamente verso il basso e verso l'alto, i quattro elementi contenuti al click del mouse sull'elemento \"{}attesa\"{} (identificato dall'icona con i tre telefoni collegati di figura \ref{forward_call}). Queste animazioni garantiscono all'utente una visualizzazione agevole, senza ingrandire la finestra ad una dimensione ingestibile, vista la quantit\`a di informazioni da mostrare. \\
 \noindent
-Nel caso invece della chiamata in arrivo per un tecnico dell'assistenza tecnica(figura \ref{technical_call}), il sistema elaborer\`a i dati derivanti dalla chiamata in modo da fornire questa volta le informazioni riguardanti i prodotti in assistenza al momento della chiamata, in forma tabellare. In questo modo il tecnico viene a conoscenza in anticipo dei prodotti posseduti dal cliente, riuscendo a velocizzare i tempi di risoluzione.
+Nel caso invece della chiamata in arrivo per un tecnico dell'assistenza tecnica(figura \ref{technical_call}), il sistema elaborer\`a i dati derivanti dalla chiamata in modo da fornire questa volta le informazioni riguardanti i prodotti in assistenza al momento della chiamata in forma tabellare. In questo modo il tecnico viene a conoscenza in anticipo dei prodotti posseduti dal cliente, riuscendo a velocizzare i tempi di risoluzione.
 
 \begin{figure}[!ht]
 \centering
@@ -540,7 +540,7 @@ per il primo, e cos\`i:
 \noindent per il secondo.
 Strutturalmente si presentano lievemente diversi, in quanto per i fax inviati non \`e contenuto il numero di invio, sostituito invece con il nome dell'utente registrato in Voispeed che ha inviato il fax. Il resto dei parametri \`e invece comune ad entrambi, come data e ora (precise al secondo), l'ID univoco del fax, il nome del cliente contattato, se memorizzato nella rubrica del software, e lo stato del fax (ricevuto, consegnato, ecc.). \\
 La creazione dei report nel sistema informativo necessita strettamente della lettura da tali file, in quanto il server Voispeed aggiunge una nuova riga al log ad ogni operazione effettuata, rendendo necessaria una nuova lettura ad ogni accesso al report. Inoltre il committente desiderava poter collegare altre informazioni ad ogni fax, come ad esempio il cliente a cui associarlo, una categoria specifica e, nel caso servissero, delle note su qualche dettaglio. \\
-Questo bisogno \`e sfociato nella scelta di effettuare una \"{}sincronizzazione\"{} tra database e tali file di log, in modo da mantenere nel primo i dati sopra citati, voluti dal cliente, e nel secondo leggere progressivamente le informazioni fornite da Voispeed. Questo \`e stato possibile grazie all'implementazione del metodo descritto in sede di progettazione \textit{aggiornaDB}(), che si occupa, ad ogni richiesta al server del report dei fax in arrivo, di verificare l'effettiva presenza nel database(confrontando l'ID univoco del fax), e in caso negativo inserire i dati mancanti. 
+Questo bisogno \`e sfociato nella scelta di effettuare una \"{}sincronizzazione\"{} tra database e tali file di log, in modo da mantenere nel primo i dati sopra citati, voluti dal cliente, e nel secondo leggere progressivamente le informazioni fornite da Voispeed. Questo \`e stato possibile grazie all'implementazione del metodo descritto in sede di progettazione \textit{aggiornaDB}(), che si occupa, ad ogni richiesta al server del report dei fax in arrivo, di verificare l'effettiva presenza nel database (confrontando l'ID univoco del fax), e in caso negativo inserire i dati mancanti. 
 
 \newpage
 \begin{figure}[!ht]
@@ -579,7 +579,7 @@ Come si pu\`o vedere, la funzione scansiona riga per riga il file tramite gli ap
 
 \chapter{Modulo Richieste}
 \section{Analisi dei Requisiti}
-Il secondo modulo raggiunge un livello di complessit\`a pi\'u elevato del primo, a causa delle numerose variabili che entrano in contatto tra di loro. L'obiettivo in questo caso era quello di spostare la gestione delle richieste provenienti dal sito dell'azienda da GetResponse, un software di email marketing basato sul web che offre funzionalit\`a di spedizione di newsletters e di risposta automatica, al nuovo sistema informativo, per tenere traccia di tutte le operazioni svolte dai potenziali clienti interessati alle versioni dimostrative dei software sviluppati dall'azienda. 
+Il secondo modulo raggiunge un livello di complessit\`a pi\`u elevato del primo, a causa delle numerose variabili che entrano in contatto tra di loro. L'obiettivo in questo caso era quello di spostare la gestione delle richieste provenienti dal sito dell'azienda da GetResponse, un software di email marketing basato sul web che offre funzionalit\`a di spedizione di newsletters e di risposta automatica, al nuovo sistema informativo, per tenere traccia di tutte le operazioni svolte dai potenziali clienti interessati alle versioni dimostrative dei software sviluppati dall'azienda. 
 
 \begin{figure}[!ht]
 \centering
@@ -594,19 +594,19 @@ Requisito fondamentale era quindi quello di effettuare questa transizione in mod
 \subsection*{UC 2.1 Compila Form Richiesta Demo}
 \subsubsection*{Attori coinvolti} Utente Esterno, Server Tecnobit.
 \subsubsection*{Scopo e descrizione sintetica}
-L'utente esterno compila il form per scaricare un dimostrativo, richiedere un DVD o provare un programma nella sua versione online inserendo i propri dati personali specificando il prodotto selezionato.
+Il cliente compila il form per scaricare un dimostrativo, richiedere un DVD o provare un programma nella sua versione online inserendo i propri dati personali specificando il prodotto selezionato.
 \subsubsection*{Flusso di eventi}
 \begin{enumerate}
 \item Il cliente seleziona il prodotto del quale vuole richiedere una versione dimostrativa o altro.
 \item Il cliente compila il form apposito per il download.
 \end{enumerate}
 \subsubsection*{Precondizioni} Il sistema ha caricato la pagina con il form per il download.
-\subsubsection*{Postcondizioni} L'utente esterno ha compilato il form e ha inviato la richiesta al server.
+\subsubsection*{Postcondizioni} Il cliente ha compilato il form e ha inviato la richiesta al server.
 
 \subsection*{UC 2.2 Gestisci la richiesta}
-\subsubsection*{Attori coinvolti} Utente Esterno, Server Tecnobit.
+\subsubsection*{Attori coinvolti} Cliente, Server Tecnobit.
 \subsubsection*{Scopo e descrizione sintetica}
-Il sistema elabora la richiesta effettuata dall'utente esterno.
+Il sistema elabora la richiesta effettuata dal cliente.
 \subsubsection*{Flusso di eventi}
 \begin{enumerate}
 \item Il cliente invia la richiesta cliccando sull'apposito tasto.
@@ -621,23 +621,23 @@ Il sistema elabora la richiesta effettuata dall'utente esterno.
 Il sistema invia una mail all'utente con il link per procedere allo scaricamento della versione dimostrativa del prodotto.
 \subsubsection*{Flusso di eventi}
 \begin{enumerate}
-\item Il sistema raccoglie i dati dell'utente, tra i quali l'indirizzo e-mail.
+\item Il sistema raccoglie i dati del cliente, tra i quali l'indirizzo e-mail.
 \item Il sistema invia la mail con il link per scaricare la versione dimostrativa del software scelto.
 \end{enumerate}
-\subsubsection*{Precondizioni} Il sistema ha ricevuto i dati dell'utente.
-\subsubsection*{Postcondizioni} Il sistema ha inviato il link per lo scaricamento all'utente.
+\subsubsection*{Precondizioni} Il sistema ha ricevuto i dati al cliente.
+\subsubsection*{Postcondizioni} Il sistema ha inviato il link per lo scaricamento al cliente.
 
 \subsection*{UC 2.4 Scarica Software}
-\subsubsection*{Attori coinvolti} Utente Esterno, Server Tecnobit.
+\subsubsection*{Attori coinvolti} Cliente, Server Tecnobit.
 \subsubsection*{Scopo e descrizione sintetica}
-L'utente scarica il software scelto dal link ricevuto per email.
+Il cliente scarica il software scelto dal link ricevuto per email.
 \subsubsection*{Flusso di eventi}
 \begin{enumerate}
-\item L'utente riceve la mail.
-\item L'utente scarica la demo tramite il link fornitogli.
+\item Il cliente riceve la mail.
+\item Il cliente scarica la demo tramite il link fornitogli.
 \end{enumerate}
-\subsubsection*{Precondizioni} L'utente attende la mail dal sistema.
-\subsubsection*{Postcondizioni} L'utente ha scaricato la versione dimostrativa del software.
+\subsubsection*{Precondizioni} Il cliente attende la mail dal sistema.
+\subsubsection*{Postcondizioni} Il cliente ha scaricato la versione dimostrativa del software.
 
 \subsection*{UC 2.5 Inserisci richiesta}
 \subsubsection*{Attori coinvolti}  
@@ -646,9 +646,9 @@ Database, Server Tecnobit.
 Nel database vengono inseriti i dati dell'utente che ha effettuato la richiesta di download. 
 \subsubsection*{Flusso di eventi}
 \begin{enumerate}
-\item Il sistema raccoglie i dati dell'utente.
-\item Viene creata una voce nel database che descrive l'utente e l'operazione da lui effettuata, per permettere agli 
-operatori commerciali di contattarli successivamente.
+\item Il sistema raccoglie i dati del cliente.
+\item Viene creata una voce nel database che descrive il cliente e l'operazione da lui effettuata, per permettere agli 
+operatori commerciali di contattarlo successivamente.
 \end{enumerate}
 \subsubsection*{Precondizioni} Il sistema gestisce la richiesta.
 \subsubsection*{Postcondizioni} Il sistema ha inserito la richiesta nel database in modo da poter contattare successivamente il cliente che l'ha effettuata.
@@ -662,9 +662,9 @@ operatori commerciali di contattarli successivamente.
   \item Nel caso il cliente sia gi\`a inserito, ed un commerciale lo abbia in tutela per il periodo corrente, il sistema deve inviare un messaggio a quest'ultimo per informarlo della richiesta avvenuta.
   \item Nel caso il cliente sia nuovo, ma proveniente da una provincia tutelata da un agente predefinito, quest'ultimo deve vedersi automaticamente assegnata la richiesta e inviato un messaggio per avvertirlo di questo, in modo che possa contattare il cliente il prima possibile.
   \item Nei casi in cui le richieste vengano assegnate automaticamente, un messaggio deve essere inviato anche agli amministratori di sezione, in modo che possano avere una traccia di ci\`o che avviene.
-  \item Il sistema deve permettere all'amministratore di decidere quali richieste debbano essere visulizzabili da tutti i commerciali, e quali invece no.
+  \item Il sistema deve permettere all'amministratore di decidere quali richieste possano essere visualizzate da tutti i commerciali, e quali invece no.
   \item Il sistema deve consentire ad un commerciale di acquisire una richiesta pubblica per un numero di volte giornaliere stabilito a priori dall'amministratore.
-  \item Il sistema deve permettere ad un amministratore di assegnare le richieste a piacere ad un commerciale, e avvisare ques'ultimo dell'assegnazione avvenuta tramite un messaggio.
+  \item Il sistema deve permettere ad un amministratore di assegnare le richieste a piacere ad un commerciale, e avvisare quest'ultimo dell'assegnazione avvenuta tramite un messaggio.
   \item Il sistema deve provvedere a conteggiare la durata delle tutele di un cliente per un determinato utente, in modo da toglierle in caso di scadenza.
   \item Il sistema deve prevedere degli script pianificati che controllino tutte le tutele inserite in modo da eliminare quelle scadute.
 \end{itemize}
@@ -686,8 +686,8 @@ operatori commerciali di contattarli successivamente.
 \end{figure}
 
 \noindent
-Andando ad analizzare il diagramma delle classi nella figura \ref{richieste}, si pu\`o vedere come la classe \textit{Richiesta} racchiuda tutti i metodi per la gestione delle richieste memorizzate nel database, come la loro assegnazione, acquisizione e importazione da fonti diverse dal download diretto di un demo di un prodotto(in particolare da un foglio di calcolo o da una casella di posta ricevente mail propriamente formattate). \\
-Proprio per usufruire della prima possibilit\`a citata \`e presente la classe \textit{Form\_download}, che controlla tutti i meccanismi riguardanti il salvataggio dei dati del cliente richiedente la versione dimostrativa, come ad esempio il controllo di tali dati per decidere come gestire la richiesta(come ad esempio nel caso la provincia di provenienza sia esclusiva di un agente aziendale), oppure l'invio dell' e-mail contenente i link (utilizzando i metodi resi disponibili dalla classe \textit{Mail inviata}), che contiene i metodi per inviare all'indirizzo fornito un'e-mail con le informazioni richieste a seconda del prodotto. \\
+Andando ad analizzare il diagramma delle classi nella figura \ref{richieste}, si pu\`o vedere come la classe \textit{Richiesta} racchiuda tutti i metodi per la gestione delle richieste memorizzate nel database, come la loro assegnazione, acquisizione e importazione da fonti diverse dal download diretto di un demo di un prodotto (in particolare da un foglio di calcolo o da una casella di posta ricevente mail propriamente formattate). \\
+Proprio per usufruire della prima possibilit\`a citata \`e presente la classe \textit{Form\_download}, che controlla tutti i meccanismi riguardanti il salvataggio dei dati del cliente richiedente la versione dimostrativa, come ad esempio il controllo di tali dati per decidere come gestire la richiesta (pensiamo al caso in cui la provincia di provenienza sia esclusiva di un agente aziendale), oppure l'invio dell' e-mail contenente i link (utilizzando i metodi resi disponibili dalla classe \textit{Mail inviata}), che contiene i metodi per inviare all'indirizzo fornito un'e-mail con le informazioni richieste a seconda del prodotto. \\
 Come nel caso di \textit{SoftwareProdotto}, la classe \textit{Messaggio} ed in particolare il metodo statico \textit{salva}() sono stati sviluppati da un altro stagista, in quanto entrambi i moduli specificati utilizzano in pi\`u occasioni i messaggi interni per la comunicazione tra sistema-utente, o anche utente-utente, per svariati bisogni, e appunto il metodo sopra citato permette di utilizzare l'infrastruttura della messaggistica interna per permettere al sistema di comunicare con gli utenti. \\
 Anche qui si pu\`o notare la presenza della classe \textit{Utente Interno}, come nel primo modulo, per tutte le operazioni e informazioni riguardanti l'utente collegato al sistema informativo, come ad esempio i permessi posseduti.
 A seguire, sono elencati i metodi pi\`u importanti nei modelli progettati.\\
@@ -705,8 +705,8 @@ Per le richieste:
 \begin{description}
 \item[- assegna\_{}a\_{}commerciale] si occupa di effettuare tutte le operazioni seguenti all'acquisizione di una richiesta, come la creazione di una nuova scheda cliente, e di un primo contatto che descrive quando questa \`e stata creata;
 \item[- diminuisci\_{}contatore] diminuisce il contatore delle richieste giornaliere, fino a che questo \`e possibile;
-\item[- get\_{}moderatori\_{}richieste] ottiene la lista degli amministratori della sezione richieste, in particolare per generare un messaggio ad inviare a questi per avvertirli di una richiesta acquisita automaticamente da un agente provinciale o da un operatore che possiede la tutela esclusiva su un cliente;
-\item[- get\_{}elenco\_{}richieste] ricava la lista totale delle richieste, per fornirle ai vari elenchi.
+\item[- get\_{}moderatori\_{}richieste] ottiene la lista degli amministratori della sezione richieste, in particolare per generare un messaggio da inviare a questi per avvertirli di una richiesta acquisita automaticamente da un agente provinciale o da un operatore che possiede la tutela esclusiva su un cliente;
+\item[- get\_{}elenco\_{}richieste] ricava la lista totale delle richieste per fornirle ai vari elenchi.
 \end{description}
 
 
@@ -787,7 +787,7 @@ Terminata la spiegazione riguardante i messaggi interni, l'analisi si sposta all
 \noindent
 La figura \ref{elenco_richieste} mostra le informazioni fornite dal report per ogni richiesta in arrivo ancora libera, dal punto di vista di un amministratore. Questi, per ognuna, ha la possibilit\`a di acquisirla (come verr\`a spiegato in seguito), cancellarla oppure assegnarla ad un operatore commerciale qualsiasi, a sua discrezione. \\
 Inoltre pu\`o decidere di nascondere alcune richieste nel caso avesse bisogno di approfondire alcuni dettagli su un possibile cliente.
-Un semplice utente, invece, all'apertura dell'elenco pubblico, pu\`o semplicemente decidere di acquisire alcune di queste richieste, rispettando il limite giornaliero a lui assegnato. 
+Un normale utente, invece, all'apertura dell'elenco pubblico, pu\`o semplicemente decidere di acquisire alcune di queste richieste, rispettando il limite giornaliero a lui assegnato. 
 
 \begin{figure}[!ht]
 \centering
@@ -806,7 +806,7 @@ Questa acquisizione, mostrata nella figura \ref{acq_richieste} nella sua fase te
 \subsection{Importazione richieste}
 Altra funzionalit\`a richiesta con una certa priorit\`a era sicuramente la possibilit\`a di importare elenchi di richieste da database esterni, la maggior parte acquistati come file excel oppure, sistema non meno importante, scansionando una casella e-mail opportunamente predisposta a ricevere messaggi strutturati allo stesso modo.\\
 Il primo metodo \`e sicuramente di importanza capitale in quanto permette un'acquisizione immensa di potenziali clienti, e per questo \`e stata sviluppata appositamente una pagina, accessibile ai soli amministratori, tramite la quale importare tali file in modo da rendere semplice l'operazione. \\
-Per raggiungere questo risultato \`e risultata adatta la libreria PHP Excel Reader \cite{excel reader}, tanto facile da utilizzare quanto potente \cite{cinque}, capace di trasformare un file excel in una tabella HTML, e di leggerlo cella per cella.
+Per raggiungere questo obbiettivo \`e risultata adatta la libreria PHP Excel Reader \cite{excel reader}, tanto facile da utilizzare quanto potente \cite{cinque}, capace di trasformare un file excel in una tabella HTML, e di leggerlo cella per cella.
 
 \begin{figure}[!ht]
 \centering
@@ -819,7 +819,8 @@ Per raggiungere questo risultato \`e risultata adatta la libreria PHP Excel Read
 Proprio grazie a questa possibilit\`a, la scansione riga per riga dei campi del foglio di calcolo (forniti appositamente con i dati voluti, in genere nome, cognome ed indirizzo e-mail), permette di inserire una richiesta di seguito all'altra, fino alla fine del file.\\
  L'amministratore potr\`a in seguito assegnare ai commerciali le richieste volute, oppure lasciarle nell'elenco pubblico. 
 \newpage
-La figura \ref{excel} mostra la fase terminale del processo, nella quale il sistema, richiamando tramite il controller la funzione \textit{leggi\_file}(), e utilizzando la libreria \textit{upload} di CodeIgniter per l'upload dei file.
+\noindent
+La figura \ref{excel} mostra la fase terminale del processo nella quale il sistema, richiamando tramite il controller la funzione \textit{leggi\_file}() e utilizzando la libreria \textit{upload} di CodeIgniter, si occupa dell'upload dei file desiderati.
 
 \begin{figure}[!ht]
 \centering
@@ -830,7 +831,7 @@ La figura \ref{excel} mostra la fase terminale del processo, nella quale il sist
 
 \noindent
 Per quanto riguarda invece la scansione della casella mail, serve una premessa: Tecnobit \`e affiliata a Bricsys, societ\`a canadese sviluppatrice di Bricscad, il software pi\`u importante trattato dall'azienda, tradotto e venduto su suolo italiano. Si tratta di una soluzione alternativa e notevolmente pi\`u economica di Autocad, soluzione leader del settore CAD di Autodesk Inc., compatibilile con il formato AutoCAD DWG utilizzato da quest'ultimo. \\
-Grazie a questa affiliazione, nel caso un cliente italiano scarichi la versione dimostrativa dal sito di Bricsys, questa invia un mail standard a Tecnobit con i dati di questo cliente, in modo da permettere il contatto di questo cliente interessato all'acquisto del software in questione.\\
+Grazie a questa affiliazione, nel caso un cliente italiano scarichi la versione dimostrativa dal sito di Bricsys, questa invia un' e-mail standard a Tecnobit con i dati di questo cliente, in modo da permettere agli operatori di contattarlo, valutando il suo interesse all'acquisto del software in questione.\\
 Per garantire quindi la possibilit\`a di aggiungere queste richieste al database, \`e stata usata la libreria \textit{\hyperlink{imap}{\underline{IMAP}}, POP3 e NNTP} di estensione al PHP \cite{quattro}, utile per leggere la casella di posta.
 \newpage
 
@@ -862,8 +863,8 @@ Come da requisito di accessibilit\`a il codice HTML/CSS di ogni pagina \`e stato
 
 \section{Problemi Incontrati}
 A proposito del modulo VoIP e Fax, il problema principale \`e stato di trovare un modo efficiente per gestire l'evento di chiusura di una chiamata, lasciando l'operatore sulla stessa pagina nel caso dell'inoltro di una telefonata, in quanto ogni volta che si rendeva necessario un inoltro, Voispeed interpretava la chiusura della chiamata con l'interno selezionato e  l'evento CALL\_CLOSE aggiornava la pagina del visualizzatore perdendo tutti i dati del cliente chiamante. \\
-Per ovviare a questo problema si \`e deciso di gestire manualmente l'evento di chiusura della chiamata escludendolo dal controllo del client, in modo da far si che sia l'utente ad avere il pieno controllo della terminazione della telefonata. In tale modo un utente deve sempre chiudere manualmente la chiamata per far si che il sistema elabori correttamente le informazioni.\\
-Nel caso dei fax ricevuti, si poneva invece il problema delle prestazioni. Infatti la lettura necessitava della scansione di tutte le righe una per una, come per i fax in arrivo, ma filtrati per utente, il che inizialmente rendeva i tempi di attesa (anche per ottenere solo un paio di fax nell'elenco) troppo elevati: per ovviare a questo problema, si \`e scelto di ottenere l'elenco dei fax associati a un singolo utente salvandoli in un array, per poi confrontarli con l'identificativo di ogni riga del file: in questo modo le prestazioni aumentavano visibilmente, rendendo finalmente fruibile il report. \\
+Per ovviare a questo problema si \`e deciso di gestire manualmente l'evento di chiusura della chiamata escludendolo dal controllo del client, in modo da far s\`i che sia l'utente ad avere il pieno controllo sulla terminazione della telefonata. In tale modo un utente deve sempre chiudere manualmente la chiamata per consentire al sistema di elaborare correttamente le informazioni.\\
+Nel caso dei fax ricevuti, si poneva invece il problema delle prestazioni. Infatti la lettura necessitava della scansione una per una di tutte le righe, come per i fax in arrivo, ma filtrati per utente, il che inizialmente rendeva i tempi di attesa (anche per ottenere solo un paio di fax nell'elenco) troppo elevati: per ovviare a questo problema, si \`e scelto di ottenere l'elenco dei fax associati a un singolo utente salvandoli in un array, per poi confrontarli con l'identificativo di ogni riga del file: in questo modo le prestazioni aumentavano visibilmente, rendendo finalmente fruibile il report. \\
 Per quanto riguarda il modulo delle richieste, la difficolt\`a principale \`e stato il ragionamento basato su considerazioni molto teoriche (in quanto il regolamento commerciale interno, che regola il comportamento degli operatori nel loro lavoro e pone alcune limitazioni, \`e tuttora in fase di concepimento), che sicuramente andranno a modificare alcuni dettagli in futuro, soprattutto per quanto riguarda l'acquisizione delle richieste e la durata dei periodi di tutela su un cliente.
 
 \chapter{Conclusioni}
@@ -875,17 +876,22 @@ A seguito di una breve dimostrazione dell'operato svolto, anche con il lavoro di
 Alcuni possibili miglioramenti del prodotto potrebbero riguardare la creazione di nuovi filtri negli elenchi, sia dei fax che delle richieste, in modo da garantire una maggiore scrematura dei risultati, anche se nell'immediato tale bisogno non si pone.
 
 \section{Conoscenze utilizzate ed acquisite}
-Dal punto di vista tecnico all'inizio dello stage conoscevo la maggior parte delle tecnologie usate. Le nozioni che possedevo e si sono dimostrate essere sufficienti riguardavano l'\hyperlink{sql}{\underline{SQL}} e  le tecnologie per il Web come l'HTML e i CSS.. La parte in cui ho riscontrato maggiori difficolt\`a \`e stata quella inerente CodeIgniter e PHP. 
+Dal punto di vista tecnico all'inizio dello stage conoscevo la maggior parte delle tecnologie usate. Le nozioni possedute che si sono dimostrate sufficienti riguardavano l'\hyperlink{sql}{\underline{SQL}} e  le tecnologie per il Web come l'HTML e i CSS. La parte in cui ho riscontrato maggiori difficolt\`a \`e stata quella inerente CodeIgniter e PHP. 
 PHP \`e stata ovviamente la base di partenza, per poter poi comprendere il funzionamento del framework. La documentazione presente su \textit{php.net} \cite{quattro} \`e risultata ottima, con ogni metodo o costrutto discusso approfonditamente anche con esempi dell'utenza, che sono sempre di grossa utilit\`a in questi casi. \\
-Per CodeIgniter ho trovato la documentazione ufficiale molto esauriente e semplice da comprendere, e mi sono inoltre rivolto a tutorials presenti in rete abbastanza completi. L'utilizzo del pattern MVC nella programmazione \`e stato un po' spiazzante inizialmente, in quanto necessitava di un approccio molto strutturato a monte, ma incredibilmente valido una volta abituaticisi. \\
+Per CodeIgniter ho trovato la documentazione ufficiale molto esauriente e semplice da comprendere, e mi sono inoltre rivolto a tutorials presenti in rete abbastanza completi. L'utilizzo del pattern MVC nella programmazione \`e stato un po' spiazzante inizialmente, in quanto necessitava di un approccio molto strutturato a monte, ma incredibilmente valido una volta abituatomi. \\
 Le funzioni di aiuto fornite da CodeIgniter hanno permesso di effettuare operazioni anche complesse in modo molto rapido, permettendo un risparmio di tempo non indifferente. Inoltre questa modalit\`a di sviluppo \`e stata molto proficua dal punto di vista didattico, in quanto l'interfacciamento di un'applicazione basata sul web con un DBMS \`e una materia di notevole interesse, anche in prospettiva lavorativa, e durante i corsi frequentati nessun progetto era arrivato ad integrare insieme tali tecnologie, trattandole sempre in sedi staccate tra loro. 
 
 \section{Considerazioni personali}
-Partendo dal presupposto che una delle motivazioni principali per la scelta di questo stage \`e stata appunto la curiosit\`a verso le tecnologie utilizzate, le competenze acquisite si possono definire soddisfacenti, sia in campo teorico che in campo pratico. Il lato pratico, oltre a far emergere problemi prima ignorati, fornisce anche una certa sicurezza nelle proprie conoscenze, necessaria ad effettuare le scelte richieste in fase di progettazione. Oltre alle conoscenze tecniche appena descritte, l'attivit\`a di stage permette anche di entrare in contatto con il mondo del lavoro. Quest'esperienza di quasi tre mesi \`e stata l'ideale per entrare nell'ottica aziendale. Rispetto ai progetti svolti durante i corsi universitari, infatti, i requisti sono molto meno definiti e i tempi per completare il prodotto sono estremamente ridotti. Questa ha portato anche ad intuire che nelle aziende locali la disciplina dell'ingegneria del software non abbia fatto particolarmente presa, in quanto si \`e potuto assistere a scelte che miravano pi\`u ad ottenere un prodotto apparentemente funzionante e commerciabile (\"{}dottrina\"{} seguita anche per lo sviluppo nel tempo del vecchio sistema informativo aziendale), piuttosto che ad un prodotto affidabile, frutto di processi produttivi di qualit\`a verificabile e migliorabile nel tempo.
+Partendo dal presupposto che una delle motivazioni principali per la scelta di questo stage \`e stata appunto la curiosit\`a verso le tecnologie utilizzate, le competenze acquisite si possono definire soddisfacenti, sia in campo teorico che in campo pratico. Il lato pratico, oltre a far emergere problemi prima ignorati, fornisce anche una certa sicurezza nelle proprie conoscenze, necessaria ad effettuare le scelte richieste in fase di progettazione. Oltre alle conoscenze tecniche appena descritte, l'attivit\`a di stage permette anche di entrare in contatto con il mondo del lavoro. Quest'esperienza di quasi tre mesi \`e stata l'ideale per entrare nell'ottica aziendale. Rispetto ai progetti svolti durante i corsi universitari, infatti, i requisti sono molto meno definiti e i tempi per completare il prodotto sono estremamente ridotti. Questa ha portato anche ad intuire come nelle aziende locali la disciplina dell'ingegneria del software non abbia fatto particolarmente presa, in quanto si \`e potuto assistere a scelte che miravano pi\`u ad ottenere un prodotto apparentemente funzionante e commerciabile (\"{}dottrina\"{} seguita anche per lo sviluppo nel tempo del vecchio sistema informativo aziendale), piuttosto che ad un prodotto affidabile, frutto di processi produttivi di qualit\`a verificabile e migliorabile nel tempo.
 
 \clearpage{\pagestyle{empty}\cleardoublepage
 \addcontentsline{toc}{chapter}{Glossario}
 \chapter*{Glossario}
+\section*{A}
+\hypertarget{api}{}
+\textbf{API:}
+Le Application Programming Interface (Interfaccia di Programmazione di un'Applicazione), sono ogni insieme di procedure disponibili al programmatore, raggruppate solitamente per formare un set di strumenti specifici per un determinato compito.\\ Sono un metodo per ottenere un'astrazione, di solito tra l'hardware e il programmatore, o tra software a basso ed alto livello. Le API stesse sono un'astrazione: il software che fornisce una certa API \`e detto implementazione dell'API.
+
 \section*{C}
 \hypertarget{css}{}
 \textbf{CSS:}
@@ -961,7 +967,7 @@ SQL (Structured Query Language) \`e un linguaggio di programmazione per database
 \section*{U}
 \hypertarget{uml}{}
 \textbf{UML:}
-UML (Unified Modeling Language) \`e un  linguaggio di modellazione e specica basato sul paradigma object-oriented che consente di descrivere in modo standard ed efficace sistemi complessi.\\
+UML (Unified Modeling Language) \`e un  linguaggio di modellazione e specifica basato sul paradigma object-oriented che consente di descrivere in modo standard ed efficace sistemi complessi.\\
 
 \hypertarget{url}{}
 \noindent 
